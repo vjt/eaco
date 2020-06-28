@@ -56,7 +56,7 @@ And then execute:
 
 ## Usage
 
-Create `config/authorization.rb` [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/DSL)
+Create `config/authorization.rb` [(rdoc)](https://vjt.github.io/eaco/Eaco/DSL)
 
 ```ruby
 # Defines `Document` to be an authorized resource.
@@ -91,8 +91,8 @@ actor User do
 end
 ```
 
-Given a Resource [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/Resource)
-with an ACL [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/ACL):
+Given a Resource [(rdoc)](https://vjt.github.io/eaco/Eaco/Resource)
+with an ACL [(rdoc)](https://vjt.github.io/eaco/Eaco/ACL):
 
 ```ruby
 # An example ACL
@@ -103,7 +103,7 @@ with an ACL [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/ACL):
 => #<Document::ACL {"user:10" => :owner, "group:reviewers" => :reader}>
 ```
 
-and an Actor [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/Actor):
+and an Actor [(rdoc)](https://vjt.github.io/eaco/Eaco/Actor):
 
 ```ruby
 # An example Actor
@@ -176,7 +176,7 @@ Grant reader access to a group:
 ```
 
 Obtain a collection of Resources accessible by a given Actor
-[(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/Adapters):
+[(rdoc)](https://vjt.github.io/eaco/Eaco/Adapters):
 
 ```ruby
 >> Document.accessible_by(user)
@@ -184,7 +184,7 @@ Obtain a collection of Resources accessible by a given Actor
 
 Check whether a controller action can be accessed by an user. Your
 Controller must respond to `current_user` for this to work.
-[(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/Controller)
+[(rdoc)](https://vjt.github.io/eaco/Eaco/Controller)
 
 ```ruby
 class DocumentsController < ApplicationController
