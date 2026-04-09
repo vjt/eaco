@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Eaco::Adapters::ActiveRecord
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco::Adapters::ActiveRecord";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (A)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Adapters.html" title="Eaco::Adapters (module)">Adapters</a></span></span>
+     &raquo; 
+    <span class="title">ActiveRecord</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Eaco::Adapters::ActiveRecord
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco/adapters/active_record.rb<span class="defines">,<br />
+  lib/eaco/adapters/active_record/compatibility.rb,<br /> lib/eaco/adapters/active_record/postgres_jsonb.rb,<br /> lib/eaco/adapters/active_record/compatibility/v32.rb,<br /> lib/eaco/adapters/active_record/compatibility/v40.rb,<br /> lib/eaco/adapters/active_record/compatibility/v41.rb,<br /> lib/eaco/adapters/active_record/compatibility/v42.rb,<br /> lib/eaco/adapters/active_record/compatibility/scoped.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>PostgreSQL 9.4 and up backing store for ACLs.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">Eaco::ACL</a></span></li>
+    
+      <li><span class='object_link'><a href="ActiveRecord/PostgresJSONb.html" title="Eaco::Adapters::ActiveRecord::PostgresJSONb (module)">PostgresJSONb</a></span></li>
+    
+  </ul>
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="ActiveRecord/PostgresJSONb.html" title="Eaco::Adapters::ActiveRecord::PostgresJSONb (module)">PostgresJSONb</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ActiveRecord/Compatibility.html" title="Eaco::Adapters::ActiveRecord::Compatibility (class)">Compatibility</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#included-class_method" title="included (class method)">.<strong>included</strong>(base)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks whether the model’s data structure fits the ACL persistance requirements.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#strategies-class_method" title="strategies (class method)">.<strong>strategies</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Currently defined collection extraction strategies.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#acl-instance_method" title="#acl (instance method)">#<strong>acl</strong>  &#x21d2; ACL </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This Resource’s ACL.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#acl=-instance_method" title="#acl= (instance method)">#<strong>acl=</strong>(acl)  &#x21d2; ACL </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the Resource’s ACL.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="included-class_method">
+  
+    .<strong>included</strong>(base)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Checks whether the model’s data structure fits the ACL persistance requirements.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>base</span>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>your application’s model</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>void</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="ActiveRecord/Compatibility.html" title="Eaco::Adapters::ActiveRecord::Compatibility (class)">Compatibility</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ActiveRecord/Compatibility.html#initialize-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_check!'><span class='object_link'><a href="ActiveRecord/Compatibility.html#check!-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#check! (method)">check!</a></span></span>
+
+  <span class='id identifier rubyid_column'>column</span> <span class='op'>=</span> <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_columns_hash'>columns_hash</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>acl</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_column'>column</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="../Malformed.html" title="Eaco::Malformed (class)">Malformed</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Please define a jsonb column named `acl` on </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base'>base</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='symbol'>:json</span> <span class='op'>||</span> <span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='symbol'>:jsonb</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="../Malformed.html" title="Eaco::Malformed (class)">Malformed</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The `acl` column on </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base'>base</span><span class='embexpr_end'>}</span><span class='tstring_content'> must be of the jsonb type.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="strategies-class_method">
+  
+    .<strong>strategies</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Currently defined collection extraction strategies.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Hash</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_strategies'>strategies</span>
+  <span class='lbrace'>{</span><span class='symbol'>:pg_jsonb</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="ActiveRecord/PostgresJSONb.html" title="Eaco::Adapters::ActiveRecord::PostgresJSONb (module)">PostgresJSONb</a></span></span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="acl-instance_method">
+  
+    #<strong>acl</strong>  &#x21d2; <tt><span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns this Resource’s ACL.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>this Resource’s ACL.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">Eaco::ACL</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_acl'>acl</span>
+  <span class='id identifier rubyid_acl'>acl</span> <span class='op'>=</span> <span class='id identifier rubyid_read_attribute'>read_attribute</span><span class='lparen'>(</span><span class='symbol'>:acl</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_acl'>acl</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_acl'>acl</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="acl=-instance_method">
+  
+    #<strong>acl=</strong>(acl)  &#x21d2; <tt><span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the Resource’s ACL.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>acl</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the new ACL to set.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">Eaco::ACL</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_acl='>acl=</span><span class='lparen'>(</span><span class='id identifier rubyid_acl'>acl</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_write_attribute'>write_attribute</span> <span class='symbol'>:acl</span><span class='comma'>,</span> <span class='id identifier rubyid_acl'>acl</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:49 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

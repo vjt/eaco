@@ -6,40 +6,49 @@
 [![Inline docs](http://inch-ci.org/github/ifad/eaco.svg?branch=master)](http://inch-ci.org/github/ifad/eaco)
 [![Gem Version](https://badge.fury.io/rb/eaco.svg)](http://badge.fury.io/rb/eaco)
 
-Eacus, the holder of the keys of Hades, is an ACL-based authorization
+Eacus, the holder of the keys of Hades, is an Attribute-Based Access Control ([ABAC](https://en.wikipedia.org/wiki/Attribute-based_access_control)) authorization
 framework for Ruby.
 
 ![Eaco e Telamone][eaco-e-telamone]
 
+*"Aeacus telemon by user Ravenous at en.wikipedia.org - Public domain through Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Aeacus_telemon.jpg"*
+
 ## Design
 
-Eaco provides your context's Resources discretionary access by an Actor.
-Access to the Resource is determined using an ACL.
+Eaco provides your application's Resources discretionary access based on attributes.
+Access to a Resource by an Actor is determined by checking whether the Actor owns
+the security attributes (Designators) required by the Resource.
 
-Different Actors can have different levels of access to the same Resource,
-depending on their role as determined by the ACL.
+Each Resource protected by Eaco has an ACL attached. ACLs define which security
+attribute grant access to the Resource, and at which level. The level of access
+is expressed in terms of roles. Roles are scoped per Resource types.
 
-To each role are granted a set of possible abilities, and access is verified
-by checking whether a given actor can perform a specific ability.
+Each Role then describes a set of abilities that it can perform. In your code,
+you check directly whether an Actor has a specific ability on a Resource, and
+all the indirection is then evaluated by Eaco.
 
-Actors are described by their Designators, a pluggable mechanism to be
-implemented in your application.
+## Designators
 
-Each Actor has many designators that describe either its identity or its
-belonging to a group or occupying a position in a department.
+Security attributes are extracted out of Actors through the Designators framework,
+a pluggable mechanism whose details are up to your application.
+
+An Actor can have many designators,  that describe its identity or its belonging
+to a group or occupying a position in a department.
 
 Designators are Ruby classes that can embed any sort of custom behaviour that
 your application requires.
 
+## ACLS
+
 ACLs are hashes with designators as keys and roles as values. Extracting
 authorized collections requires only an hash key lookup mechanism in your
-database. Adapters are provided for PG's jsonb and for CouchDB-Lucene.
+database. Adapters are provided for PG's +jsonb+ and for CouchDB-Lucene.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'eaco', github: 'ifad/eaco'
+    gem 'eaco'
 
 And then execute:
 
@@ -47,7 +56,7 @@ And then execute:
 
 ## Usage
 
-Create `config/authorization.rb` [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/DSL)
+Create `config/authorization.rb` [(rdoc)](https://vjt.github.io/eaco/Eaco/DSL)
 
 ```ruby
 # Defines `Document` to be an authorized resource.
@@ -82,23 +91,25 @@ actor User do
 end
 ```
 
-Given a Resource [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/Resource)
-with an ACL [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/ACL):
+Given a Resource [(rdoc)](https://vjt.github.io/eaco/Eaco/Resource)
+with an ACL [(rdoc)](https://vjt.github.io/eaco/Eaco/ACL):
 
 ```ruby
 # An example ACL
 >> document = Document.first
 => #<Document id:42 name:"President's report for loans.docx" [...]>
+
 >> document.acl
 => #<Document::ACL {"user:10" => :owner, "group:reviewers" => :reader}>
 ```
 
-and an Actor [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/Actor):
+and an Actor [(rdoc)](https://vjt.github.io/eaco/Eaco/Actor):
 
 ```ruby
 # An example Actor
 >> user = User.find(10)
 => #<User id:10 name:"Bob Fropp" group_ids:['employees'], tags:['english']>
+
 >> user.designators
 => #<Set{ #<Designator(User) value:10>, #<Designator(Group) value:"employees">, #<Designator(Tag) value:"english"> }
 ```
@@ -116,14 +127,14 @@ you can check if the Actor can perform a specific action on the Resource:
 and which access level (`role`) the Actor has for this Resource:
 
 ```ruby
->> document.role_of user
-=> :owner
+>> document.roles_of user
+=> [:owner]
 
 >> boss = User.find_by_group('reviewer').first
 => #<User id:42 name:"Jake Leister" group_ids:['reviewers', 'bosses']>
 
->> document.role_of boss
-=> :reader
+>> document.roles_of boss
+=> [:reader]
 
 >> boss.can? :read, document
 => true
@@ -164,25 +175,27 @@ Grant reader access to a group:
 => true
 ```
 
-Obtain a collection of Resources accessible by a given Actor [(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/Adapters):
+Obtain a collection of Resources accessible by a given Actor
+[(rdoc)](https://vjt.github.io/eaco/Eaco/Adapters):
 
 ```ruby
 >> Document.accessible_by(user)
 ```
 
 Check whether a controller action can be accessed by an user. Your
-`ApplicationController` must respond to `current_user` for this to work.
-[(rdoc)](http://www.rubydoc.info/github/ifad/eaco/master/Eaco/Controller)
+Controller must respond to `current_user` for this to work.
+[(rdoc)](https://vjt.github.io/eaco/Eaco/Controller)
 
 ```ruby
 class DocumentsController < ApplicationController
   before_filter :find_document
 
-  authorize :edit, :update, [:document, :read]
+  authorize :show, [:document, :read]
+  authorize :edit, [:document, :edit]
 
   private
     def find_document
-      @document = Document.find(:id)
+      @document = Document.find(params[:id])
     end
 end
 ```
@@ -208,9 +221,9 @@ see `features/active_record.example.yml` for an example.
 
 Run `bundle` once. This will install the base bundle.
 
-Run `appraisal` once. This will install the supported Rails versions and pg.
+Run `appraisal` once. This will install the supported Rails versions and +pg+.
 
-Run `rake`. This will run the specs and cucumber features.
+Run `rake`. This will run the specs and cucumber features and report coverage.
 
 Specs are run against the supported rails versions in turn. If you want to
 focus on a single release, use `appraisal rails-X.Y rake`, where `X.Y` can be
@@ -228,4 +241,4 @@ focus on a single release, use `appraisal rails-X.Y rake`, where `X.Y` can be
 
 This software is Made in Italy :it: :smile:.
 
-[eaco-e-telamone]: http://upload.wikimedia.org/wikipedia/commons/7/70/Aeacus_telemon.jpg "Aeacus telemon by user Ravenous at en.wikipedia.org - Public domain through Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Aeacus_telemon.jpg#mediaviewer/File:Aeacus_telemon.jpg"
+[eaco-e-telamone]: http://upload.wikimedia.org/wikipedia/commons/7/70/Aeacus_telemon.jpg

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Eaco::Adapters::ActiveRecord::Compatibility
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco::Adapters::ActiveRecord::Compatibility";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Eaco.html" title="Eaco (module)">Eaco</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Adapters.html" title="Eaco::Adapters (module)">Adapters</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../ActiveRecord.html" title="Eaco::Adapters::ActiveRecord (module)">ActiveRecord</a></span></span>
+     &raquo; 
+    <span class="title">Compatibility</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../../../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Eaco::Adapters::ActiveRecord::Compatibility
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Eaco::Adapters::ActiveRecord::Compatibility</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco/adapters/active_record/compatibility.rb<span class="defines">,<br />
+  lib/eaco/adapters/active_record/compatibility/v32.rb,<br /> lib/eaco/adapters/active_record/compatibility/v40.rb,<br /> lib/eaco/adapters/active_record/compatibility/v41.rb,<br /> lib/eaco/adapters/active_record/compatibility/v42.rb,<br /> lib/eaco/adapters/active_record/compatibility/scoped.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets up JSONB support for the different AR versions</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Compatibility/Scoped.html" title="Eaco::Adapters::ActiveRecord::Compatibility::Scoped (module)">Scoped</a></span>, <span class='object_link'><a href="Compatibility/V32.html" title="Eaco::Adapters::ActiveRecord::Compatibility::V32 (module)">V32</a></span>, <span class='object_link'><a href="Compatibility/V40.html" title="Eaco::Adapters::ActiveRecord::Compatibility::V40 (module)">V40</a></span>, <span class='object_link'><a href="Compatibility/V41.html" title="Eaco::Adapters::ActiveRecord::Compatibility::V41 (module)">V41</a></span>, <span class='object_link'><a href="Compatibility/V42.html" title="Eaco::Adapters::ActiveRecord::Compatibility::V42 (module)">V42</a></span>
+    
+  
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#active_record_version-instance_method" title="#active_record_version (instance method)">#<strong>active_record_version</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Example: “42” for 4.2.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check!-instance_method" title="#check! (instance method)">#<strong>check!</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks whether the target model is compatible.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(model)  &#x21d2; Compatibility </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Memoizes the given <code>model</code> for later <span class='object_link'><a href="#check!-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#check! (method)">#check!</a></span> calls.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#support_module-instance_method" title="#support_module (instance method)">#<strong>support_module</strong>  &#x21d2; Module </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Tries to look up the support module for the <span class='object_link'><a href="#active_record_version-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#active_record_version (method)">#active_record_version</a></span> in the <span class='object_link'><a href="" title="Eaco::Adapters::ActiveRecord::Compatibility (class)">Compatibility</a></span> namespace.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#support_module_name-instance_method" title="#support_module_name (instance method)">#<strong>support_module_name</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Example: “V32” for Rails 3.2.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#target-instance_method" title="#target (instance method)">#<strong>target</strong>  &#x21d2; ActiveRecord::Base </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Associated with the model.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(model)  &#x21d2; <tt><span class='object_link'><a href="" title="Eaco::Adapters::ActiveRecord::Compatibility (class)">Compatibility</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Memoizes the given <code>model</code> for later <span class='object_link'><a href="#check!-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#check! (method)">#check!</a></span> calls.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt>ActiveRecord::Base</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the model to check</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record/compatibility.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='ivar'>@model</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="active_record_version-instance_method">
+  
+    #<strong>active_record_version</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Example: “42” for 4.2</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the <code>ActiveRecord</code> major and minor version numbers</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record/compatibility.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_active_record_version'>active_record_version</span>
+  <span class='id identifier rubyid_ver'>ver</span> <span class='op'>=</span> <span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='symbol'>:VERSION</span><span class='rparen'>)</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_ver'>ver</span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='symbol'>:MAJOR</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_ver'>ver</span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='symbol'>:MINOR</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check!-instance_method">
+  
+    #<strong>check!</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Checks whether the target model is compatible. Looks up the <span class='object_link'><a href="#support_module-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#support_module (method)">#support_module</a></span> and includes it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#support_module-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#support_module (method)">#support_module</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record/compatibility.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check!'>check!</span>
+  <span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='id identifier rubyid_support_module'>support_module</span>
+  <span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_instance_eval'>instance_eval</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_include'>include</span> <span class='id identifier rubyid_layer'>layer</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="support_module-instance_method">
+  
+    #<strong>support_module</strong>  &#x21d2; <tt>Module</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Tries to look up the support module for the <span class='object_link'><a href="#active_record_version-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#active_record_version (method)">#active_record_version</a></span> in the <span class='object_link'><a href="" title="Eaco::Adapters::ActiveRecord::Compatibility (class)">Eaco::Adapters::ActiveRecord::Compatibility</a></span> namespace.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Module</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the support module</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Error.html" title="Eaco::Error (class)">Eaco::Error</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if not found.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#check!-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#check! (method)">#check!</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69
+70
+71
+72
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record/compatibility.rb', line 67</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_support_module'>support_module</span>
+  <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_const_defined?'>const_defined?</span><span class='lparen'>(</span><span class='id identifier rubyid_support_module_name'>support_module_name</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="../../../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Error.html" title="Eaco::Error (class)">Error</a></span></span><span class='comma'>,</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>      Unsupported Active Record version: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_active_record_version'>active_record_version</span><span class='embexpr_end'>}</span><span class='tstring_content'>
+</span><span class='heredoc_end'>    EOF
+</span>  <span class='kw'>end</span>
+
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span> <span class='id identifier rubyid_support_module_name'>support_module_name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="support_module_name-instance_method">
+  
+    #<strong>support_module_name</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Example: “V32” for Rails 3.2.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>“V” with <span class='object_link'><a href="#active_record_version-instance_method" title="Eaco::Adapters::ActiveRecord::Compatibility#active_record_version (method)">#active_record_version</a></span> appended.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+82
+83
+84</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record/compatibility.rb', line 82</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_support_module_name'>support_module_name</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>V</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_active_record_version'>active_record_version</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="target-instance_method">
+  
+    #<strong>target</strong>  &#x21d2; <tt>ActiveRecord::Base</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns associated with the model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ActiveRecord::Base</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>associated with the model</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record/compatibility.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_target'>target</span>
+  <span class='ivar'>@model</span><span class='period'>.</span><span class='id identifier rubyid_base_class'>base_class</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:50 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

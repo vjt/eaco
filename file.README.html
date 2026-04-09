@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Eaco">Eaco</h1>
+
+<p><a href="https://travis-ci.org/ifad/eaco"><img src="https://travis-ci.org/ifad/eaco.svg"></a> <a href="https://coveralls.io/r/ifad/eaco"><img src="https://coveralls.io/repos/ifad/eaco/badge.svg"></a> <a href="https://codeclimate.com/github/ifad/eaco"><img src="https://codeclimate.com/github/ifad/eaco/badges/gpa.svg"></a> <a href="http://inch-ci.org/github/ifad/eaco"><img src="http://inch-ci.org/github/ifad/eaco.svg?branch=master"></a> <a href="http://badge.fury.io/rb/eaco"><img src="https://badge.fury.io/rb/eaco.svg"></a></p>
+
+<p>Eacus, the holder of the keys of Hades, is an Attribute-Based Access Control (<a href="https://en.wikipedia.org/wiki/Attribute-based_access_control">ABAC</a>) authorization framework for Ruby.</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/7/70/Aeacus_telemon.jpg"></p>
+
+<p><em>“Aeacus telemon by user Ravenous at en.wikipedia.org - Public domain through Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Aeacus_telemon.jpg”</em></p>
+
+<h2 id="label-Design">Design</h2>
+
+<p>Eaco provides your application’s Resources discretionary access based on attributes. Access to a Resource by an Actor is determined by checking whether the Actor owns the security attributes (Designators) required by the Resource.</p>
+
+<p>Each Resource protected by Eaco has an ACL attached. ACLs define which security attribute grant access to the Resource, and at which level. The level of access is expressed in terms of roles. Roles are scoped per Resource types.</p>
+
+<p>Each Role then describes a set of abilities that it can perform. In your code, you check directly whether an Actor has a specific ability on a Resource, and all the indirection is then evaluated by Eaco.</p>
+
+<h2 id="label-Designators">Designators</h2>
+
+<p>Security attributes are extracted out of Actors through the Designators framework, a pluggable mechanism whose details are up to your application.</p>
+
+<p>An Actor can have many designators, that describe its identity or its belonging to a group or occupying a position in a department.</p>
+
+<p>Designators are Ruby classes that can embed any sort of custom behaviour that your application requires.</p>
+
+<h2 id="label-ACLS">ACLS</h2>
+
+<p>ACLs are hashes with designators as keys and roles as values. Extracting authorized collections requires only an hash key lookup mechanism in your database. Adapters are provided for PG’s <code>jsonb</code> and for CouchDB-Lucene.</p>
+
+<h2 id="label-Installation">Installation</h2>
+
+<p>Add this line to your application’s Gemfile:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>eaco</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre class="code ruby"><code class="ruby">$ bundle
+</code></pre>
+
+<h2 id="label-Usage">Usage</h2>
+
+<p>Create <code>config/authorization.rb</code> <a href="https://vjt.github.io/eaco/Eaco/DSL">(rdoc)</a></p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Defines `Document` to be an authorized resource.
+</span><span class='comment'>#
+</span><span class='comment'># Adds Document.accessible_by and Document#allows?
+</span><span class='comment'>#
+</span><span class='id identifier rubyid_authorize'>authorize</span> <span class='const'>Document</span><span class='comma'>,</span> <span class='label'>using:</span> <span class='symbol'>:pg_jsonb</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_roles'>roles</span> <span class='symbol'>:owner</span><span class='comma'>,</span> <span class='symbol'>:editor</span><span class='comma'>,</span> <span class='symbol'>:reader</span>
+
+  <span class='id identifier rubyid_permissions'>permissions</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_reader'>reader</span>   <span class='symbol'>:read</span>
+    <span class='id identifier rubyid_editor'>editor</span>   <span class='id identifier rubyid_reader'>reader</span><span class='comma'>,</span> <span class='symbol'>:edit</span>
+    <span class='id identifier rubyid_owner'>owner</span>    <span class='id identifier rubyid_editor'>editor</span><span class='comma'>,</span> <span class='symbol'>:destroy</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='comment'># Defines an actor and the sources from which the
+</span><span class='comment'># designators are harvested.
+</span><span class='comment'>#
+</span><span class='comment'># Adds User#designators
+</span><span class='comment'>#
+</span><span class='id identifier rubyid_actor'>actor</span> <span class='const'>User</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_admin'>admin</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span>
+    <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_admin?'>admin?</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_designators'>designators</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_user'>user</span>  <span class='label'>from:</span> <span class='symbol'>:id</span>
+    <span class='id identifier rubyid_group'>group</span> <span class='label'>from:</span> <span class='symbol'>:groups</span>
+    <span class='id identifier rubyid_tag'>tag</span>   <span class='label'>from:</span> <span class='symbol'>:tags</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>Given a Resource <a href="https://vjt.github.io/eaco/Eaco/Resource">(rdoc)</a> with an ACL <a href="https://vjt.github.io/eaco/Eaco/ACL">(rdoc)</a>:</p>
+
+<pre class="code ruby"><code class="ruby"># An example ACL
+&gt;&gt; document = Document.first
+=&gt; #&lt;Document id:42 name:&quot;President&#39;s report for loans.docx&quot; [...]&gt;
+
+&gt;&gt; document.acl
+=&gt; #&lt;Document::ACL {&quot;user:10&quot; =&gt; :owner, &quot;group:reviewers&quot; =&gt; :reader}&gt;
+</code></pre>
+
+<p>and an Actor <a href="https://vjt.github.io/eaco/Eaco/Actor">(rdoc)</a>:</p>
+
+<pre class="code ruby"><code class="ruby"># An example Actor
+&gt;&gt; user = User.find(10)
+=&gt; #&lt;User id:10 name:&quot;Bob Fropp&quot; group_ids:[&#39;employees&#39;], tags:[&#39;english&#39;]&gt;
+
+&gt;&gt; user.designators
+=&gt; #&lt;Set{ #&lt;Designator(User) value:10&gt;, #&lt;Designator(Group) value:&quot;employees&quot;&gt;, #&lt;Designator(Tag) value:&quot;english&quot;&gt; }
+</code></pre>
+
+<p>you can check if the Actor can perform a specific action on the Resource:</p>
+
+<pre class="code ruby"><code class="ruby">&gt;&gt; user.can? :read, document
+=&gt; true
+
+&gt;&gt; document.allows? :read, user
+=&gt; true
+</code></pre>
+
+<p>and which access level (<code>role</code>) the Actor has for this Resource:</p>
+
+<pre class="code ruby"><code class="ruby">&gt;&gt; document.roles_of user
+=&gt; [:owner]
+
+&gt;&gt; boss = User.find_by_group(&#39;reviewer&#39;).first
+=&gt; #&lt;User id:42 name:&quot;Jake Leister&quot; group_ids:[&#39;reviewers&#39;, &#39;bosses&#39;]&gt;
+
+&gt;&gt; document.roles_of boss
+=&gt; [:reader]
+
+&gt;&gt; boss.can? :read, document
+=&gt; true
+
+&gt;&gt; boss.can? :destroy, document
+=&gt; false
+
+&gt;&gt; user.can? :destroy, document
+=&gt; true
+</code></pre>
+
+<p>Grant reader access to a specific user:</p>
+
+<pre class="code ruby"><code class="ruby">&gt;&gt; user
+=&gt; #&lt;User id:42 name:&quot;Bob Frop&quot;&gt;
+
+&gt;&gt; document.grant :reader, :user, user.id
+=&gt; #&lt;Document::ACL &quot;user:42&quot; =&gt; :reader&gt;
+
+&gt;&gt; user.can? :read, document
+=&gt; true
+</code></pre>
+
+<p>Grant reader access to a group:</p>
+
+<pre class="code ruby"><code class="ruby">&gt;&gt; user
+=&gt; #&lt;User id:42 groups:[&#39;reviewers&#39;]&gt;
+
+&gt;&gt; document.grant :reader, :group, 3
+=&gt; #&lt;Document::ACL &quot;group:reviewers&quot; =&gt; :reader&gt;
+
+&gt;&gt; user.can? :read, document
+=&gt; true
+
+&gt;&gt; document.allows? :read, user
+=&gt; true
+</code></pre>
+
+<p>Obtain a collection of Resources accessible by a given Actor <a href="https://vjt.github.io/eaco/Eaco/Adapters">(rdoc)</a>:</p>
+
+<pre class="code ruby"><code class="ruby">&gt;&gt; Document.accessible_by(user)
+</code></pre>
+
+<p>Check whether a controller action can be accessed by an user. Your Controller must respond to <code>current_user</code> for this to work. <a href="https://vjt.github.io/eaco/Eaco/Controller">(rdoc)</a></p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>DocumentsController</span> <span class='op'>&lt;</span> <span class='const'>ApplicationController</span>
+  <span class='id identifier rubyid_before_filter'>before_filter</span> <span class='symbol'>:find_document</span>
+
+  <span class='id identifier rubyid_authorize'>authorize</span> <span class='symbol'>:show</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:document</span><span class='comma'>,</span> <span class='symbol'>:read</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_authorize'>authorize</span> <span class='symbol'>:edit</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:document</span><span class='comma'>,</span> <span class='symbol'>:edit</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_private'>private</span>
+    <span class='kw'>def</span> <span class='id identifier rubyid_find_document'>find_document</span>
+      <span class='ivar'>@document</span> <span class='op'>=</span> <span class='const'>Document</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h2 id="label-Running+specs">Running specs</h2>
+
+<p>You need a running postgresql 9.4 instance.</p>
+
+<p>Create an user and a database:</p>
+
+<pre class="code ruby"><code class="ruby">$ sudo -u postgres psql
+
+postgres=# CREATE ROLE eaco LOGIN;
+CREATE ROLE
+
+postgres=# CREATE DATABASE eaco OWNER eaco ENCODING &#39;utf8&#39;;
+CREATE DATABASE
+
+postgres=# ^D
+</code></pre>
+
+<p>Create <code>features/active_record.yml</code> with your database configuration, see <code>features/active_record.example.yml</code> for an example.</p>
+
+<p>Run <code>bundle</code> once. This will install the base bundle.</p>
+
+<p>Run <code>appraisal</code> once. This will install the supported Rails versions and <code>pg</code>.</p>
+
+<p>Run <code>rake</code>. This will run the specs and cucumber features and report coverage.</p>
+
+<p>Specs are run against the supported rails versions in turn. If you want to focus on a single release, use <code>appraisal rails-X.Y rake</code>, where <code>X.Y</code> can be <code>3.2</code>, <code>4.0</code>, <code>4.1</code> or <code>4.2</code>.</p>
+
+<h2 id="label-Contributing">Contributing</h2>
+<ol><li>
+<p>Fork it ( <a href="https://github.com/ifad/eaco/fork">github.com/ifad/eaco/fork</a> )</p>
+</li><li>
+<p>Create your feature branch (<code>git checkout -b my-new-feature</code>)</p>
+</li><li>
+<p>Commit your changes (<code>git commit -am &#39;Add some feature&#39;</code>)</p>
+</li><li>
+<p>Push to the branch (<code>git push origin my-new-feature</code>)</p>
+</li><li>
+<p>Create a new Pull Request</p>
+</li></ol>
+
+<h2 id="label-Denominazione+d-27Origine+Controllata">Denominazione d’Origine Controllata</h2>
+
+<p>This software is Made in Italy :it: :smile:.</p>
+</div></div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:49 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Eaco::Rake::DefaultTask
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco::Rake::DefaultTask";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Rake.html" title="Eaco::Rake (module)">Rake</a></span></span>
+     &raquo; 
+    <span class="title">DefaultTask</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Eaco::Rake::DefaultTask
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Eaco::Rake::DefaultTask</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd>Rake::DSL</dd>
+  </dl>
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco/rake/default_task.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Defines the default Eaco rake task. It runs tests and generates the docs.</p>
+
+<p>Usage:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Rake.html" title="Eaco::Rake (module)">Rake</a></span></span><span class='op'>::</span><span class='const'>DefaultTask</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Eaco::Rake::DefaultTask#initialize (method)">new</a></span></span>
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#bail-instance_method" title="#bail (instance method)">#<strong>bail</strong>(msg)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Bails out the given error message.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#croak-instance_method" title="#croak (instance method)">#<strong>croak</strong>(msg)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Fancily logs the given <code>msg</code> to <tt>$stderr</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#fancy-instance_method" title="#fancy (instance method)">#<strong>fancy</strong>(msg)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Makes <code>msg</code> fancy.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_documentation-instance_method" title="#generate_documentation (instance method)">#<strong>generate_documentation</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generate the documentation using <code>Yard</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>  &#x21d2; DefaultTask </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Main <code>Eaco</code> rake task.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#invoke-instance_method" title="#invoke (instance method)">#<strong>invoke</strong>(task)  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Invokes the given rake task.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#output_coverage-instance_method" title="#output_coverage (instance method)">#<strong>output_coverage</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Formats code coverage results and prints a summary.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#report_coverage-instance_method" title="#report_coverage (instance method)">#<strong>report_coverage</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reports coverage data.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run_appraisals-instance_method" title="#run_appraisals (instance method)">#<strong>run_appraisals</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Runs all appraisals (see <code>Appraisals</code> in the source root) against the defined Rails version and generates the source documentation using Yard.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run_cucumber-instance_method" title="#run_cucumber (instance method)">#<strong>run_cucumber</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Runs all cucumber features in the <code>features/</code> directory.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run_specs-instance_method" title="#run_specs (instance method)">#<strong>run_specs</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Runs all specs under the <code>spec/</code> directory.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#running_appraisals%3F-instance_method" title="#running_appraisals? (instance method)">#<strong>running_appraisals?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Are we running appraisals?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#running_in_travis%3F-instance_method" title="#running_in_travis? (instance method)">#<strong>running_in_travis?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Are we running on Travis CI?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#with_appraisal-instance_method" title="#with_appraisal (instance method)">#<strong>with_appraisal</strong>(msg)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Adds the current appraisal name to msg, if present.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Eaco::Rake::DefaultTask (class)">DefaultTask</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Main <code>Eaco</code> rake task.</p>
+
+<p>If running appraisals or running within Travis CI, run all specs and cucumber features.</p>
+
+<p>The concept here is to prepare the environment with the gems set we are testing against, and this is done by Appraisals and Travis, albeit in a different way. The first uses the <code>Appraisals</code> file, the second instead relies on the <code>.travis.yml</code> configuration.</p>
+
+<p>Documentation is generated at the end, once if running locally, but multiple times, once for each appraisal, on Travis.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_running_appraisals?'>running_appraisals?</span>
+    <span class='id identifier rubyid_task'>task</span> <span class='symbol'>:default</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_run_specs'>run_specs</span>
+      <span class='id identifier rubyid_run_cucumber'>run_cucumber</span>
+      <span class='id identifier rubyid_output_coverage'>output_coverage</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_running_in_travis?'>running_in_travis?</span>
+    <span class='id identifier rubyid_task'>task</span> <span class='symbol'>:default</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_run_specs'>run_specs</span>
+      <span class='id identifier rubyid_run_cucumber'>run_cucumber</span>
+      <span class='id identifier rubyid_report_coverage'>report_coverage</span>
+      <span class='id identifier rubyid_generate_documentation'>generate_documentation</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_desc'>desc</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Appraises specs and cucumber, generates documentation</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_task'>task</span> <span class='symbol'>:default</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_run_appraisals'>run_appraisals</span>
+      <span class='id identifier rubyid_generate_documentation'>generate_documentation</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="bail-instance_method">
+  
+    #<strong>bail</strong>(msg)  &#x21d2; <tt>Object</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Bails out the given error message.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>msg</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the message to bail</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RuntimeError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157
+158
+159</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 157</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_bail'>bail</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='id identifier rubyid_fancy'>fancy</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="croak-instance_method">
+  
+    #<strong>croak</strong>(msg)  &#x21d2; <tt>nil</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Fancily logs the given <code>msg</code> to <tt>$stderr</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>msg</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the message to bail out.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+147
+148
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 147</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_croak'>croak</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
+  <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_fancy'>fancy</span><span class='lparen'>(</span><span class='id identifier rubyid_with_appraisal'>with_appraisal</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fancy-instance_method">
+  
+    #<strong>fancy</strong>(msg)  &#x21d2; <tt>String</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Makes <code>msg</code> fancy.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>msg</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+181
+182
+183
+184
+185
+186
+187
+188
+189</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 181</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fancy'>fancy</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
+  <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>\033[0m
+\033[1;32m&gt;&gt;&gt;
+\033[1;32m&gt;&gt;&gt; EACO: \033[1;37m</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_msg'>msg</span><span class='embexpr_end'>}</span><span class='tstring_content'>
+\033[1;32m&gt;&gt;&gt;
+\033[0m
+</span><span class='heredoc_end'>  EOF
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_documentation-instance_method">
+  
+    #<strong>generate_documentation</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generate the documentation using <code>Yard</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 81</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_documentation'>generate_documentation</span>
+  <span class='id identifier rubyid_croak'>croak</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Generating documentation</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='id identifier rubyid_invoke'>invoke</span> <span class='symbol'>:yard</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="invoke-instance_method">
+  
+    #<strong>invoke</strong>(task)   <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Invokes the given rake task.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>task</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the task to invoke.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 117</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_invoke'>invoke</span><span class='lparen'>(</span><span class='id identifier rubyid_task'>task</span><span class='rparen'>)</span>
+  <span class='op'>::</span><span class='const'>Rake</span><span class='op'>::</span><span class='const'>Task</span><span class='lbracket'>[</span><span class='id identifier rubyid_task'>task</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_invoke'>invoke</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="output_coverage-instance_method">
+  
+    #<strong>output_coverage</strong>   <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Formats code coverage results and prints a summary</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+135
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 135</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_output_coverage'>output_coverage</span>
+  <span class='id identifier rubyid_summary'>summary</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Coverage.html" title="Eaco::Coverage (module)">Coverage</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format!'><span class='object_link'><a href="../Coverage.html#format!-instance_method" title="Eaco::Coverage#format! (method)">format!</a></span></span>
+  <span class='id identifier rubyid_croak'>croak</span> <span class='id identifier rubyid_summary'>summary</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="report_coverage-instance_method">
+  
+    #<strong>report_coverage</strong>   <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Reports coverage data</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_report_coverage'>report_coverage</span>
+  <span class='const'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Coverage.html" title="Eaco::Coverage (module)">Coverage</a></span></span><span class='period'>.</span><span class='id identifier rubyid_report!'><span class='object_link'><a href="../Coverage.html#report!-instance_method" title="Eaco::Coverage#report! (method)">report!</a></span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run_appraisals-instance_method">
+  
+    #<strong>run_appraisals</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Runs all appraisals (see <code>Appraisals</code> in the source root) against the defined Rails version and generates the source documentation using Yard.</p>
+
+<p>Runs them in a subprocess as the appraisals gem makes use of fork/exec hijacking the process session root.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RuntimeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the appraisals run fails.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71
+72
+73
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_run_appraisals'>run_appraisals</span>
+  <span class='id identifier rubyid_croak'>croak</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Running all appraisals</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='id identifier rubyid_pid'>pid</span> <span class='op'>=</span> <span class='id identifier rubyid_fork'>fork</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_invoke'>invoke</span> <span class='symbol'>:appraisal</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid__'>_</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Process</span><span class='period'>.</span><span class='id identifier rubyid_wait2'>wait2</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_status'>status</span><span class='period'>.</span><span class='id identifier rubyid_exitstatus'>exitstatus</span> <span class='op'>==</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_bail'>bail</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Appraisals failed with status </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_status'>status</span><span class='period'>.</span><span class='id identifier rubyid_exitstatus'>exitstatus</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run_cucumber-instance_method">
+  
+    #<strong>run_cucumber</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Runs all cucumber features in the <code>features/</code> directory</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106
+107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 103</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_run_cucumber'>run_cucumber</span>
+  <span class='id identifier rubyid_croak'>croak</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Evaluating cucumber features</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='id identifier rubyid_invoke'>invoke</span> <span class='symbol'>:cucumber</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run_specs-instance_method">
+  
+    #<strong>run_specs</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Runs all specs under the <code>spec/</code> directory</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 92</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_run_specs'>run_specs</span>
+  <span class='id identifier rubyid_croak'>croak</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Running specs</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='id identifier rubyid_invoke'>invoke</span> <span class='symbol'>:spec</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="running_appraisals?-instance_method">
+  
+    #<strong>running_appraisals?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Are we running appraisals?.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Are we running appraisals?</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+202
+203
+204</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 202</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_running_appraisals?'>running_appraisals?</span>
+  <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>APPRAISAL_INITIALIZED</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="running_in_travis?-instance_method">
+  
+    #<strong>running_in_travis?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Are we running on Travis CI?.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Are we running on Travis CI?</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+209
+210
+211</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 209</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_running_in_travis?'>running_in_travis?</span>
+  <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TRAVIS</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="with_appraisal-instance_method">
+  
+    #<strong>with_appraisal</strong>(msg)  &#x21d2; <tt>String</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Adds the current appraisal name to msg, if present</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>msg</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+167
+168
+169
+170
+171
+172
+173</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/rake/default_task.rb', line 167</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_with_appraisal'>with_appraisal</span><span class='lparen'>(</span><span class='id identifier rubyid_msg'>msg</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_gemfile'>gemfile</span>
+    <span class='id identifier rubyid_msg'>msg</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s \033[1;31m[%s]</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id identifier rubyid_msg'>msg</span><span class='comma'>,</span> <span class='id identifier rubyid_gemfile'>gemfile</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>return</span> <span class='id identifier rubyid_msg'>msg</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:50 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

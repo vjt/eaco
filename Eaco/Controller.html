@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Eaco::Controller
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco::Controller";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Eaco.html" title="Eaco (module)">Eaco</a></span></span>
+     &raquo; 
+    <span class="title">Controller</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Eaco::Controller
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  <dl>
+      <dt>Extended by:</dt>
+      <dd>ActiveSupport::Concern</dd>
+  </dl>
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco/controller.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>An ActionController extension to verify authorization in Rails applications.</p>
+
+<p>Tested on Rails 3.2 and up on Ruby 2.0 and up.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Controller/ClassMethods.html" title="Eaco::Controller::ClassMethods (module)">ClassMethods</a></span>
+    
+  
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#confront_eaco-instance_method" title="#confront_eaco (instance method)">#<strong>confront_eaco</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Asks Eaco whether thou shalt pass or not.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="confront_eaco-instance_method">
+  
+    #<strong>confront_eaco</strong>   <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Asks Eaco whether thou shalt pass or not.</p>
+
+<p>The implementation is left in this method’s body, despite a bit long for many’s taste, as it is pretty imperative and simple code. Moreover, the less we pollute ActionController’s namespace, the better.</p>
+
+<h2 id="label-La+Guardiana">La Guardiana</h2>
+
+<pre class="code ruby"><code class="ruby">                                       /\
+                      .-_-.           /  \
+             ||   .-.(    .&#39; .-.   // \  /
+              \\\/ (((\   /)))  \ / // )(
+               ) &#39;._  ,-.   ___. )/ //(__)
+               \_((( (  :)  \)))/ ,  / ||
+                \_  \ &#39;-&#39; /_   /| ),// ||
+                  \ (_._.&#39;_ \ (o__//  _||_
+                   \ )\  .(/ /  __)   \   \
+                   ( \ &#39;_  .&#39;  /(      |-. \
+                    \_&#39;._&#39;.\__/))))    (__)&#39;.&#39;.
+                   _._   |  |    _.-._ ||   \ &#39;.
+                  / //--&#39;  / &#39;--//&#39;-&#39;/\||____\  &#39;.
+                  \---.\ .----.//  //  ||//  &#39;\   \
+                 /   &#39; \/    &#39; \\__\\ ,||\\_______.&#39;
+                 \\___//\\____//\____\ ||
+      _.-&#39;&#39;&#39;---. /\___/  \____/  \\/   ||
+   ..&#39;_.&#39;&#39;&#39;&#39;---.|   /.  \        /     ||
+ .&#39;.-&#39;O    __  /  _/  )_.--.____(      ||
+/ / /  \__/  /&#39;  /\ \(__.--._____)     ||
+| |    /\ \  \_.&#39; | |   \      |       ||
+\  &#39;.__\,_.&#39;.__/./ /     ) .   |\      ||
+ &#39;..__ O --&#39; ___..&#39;     /\     /|&#39;.    ||
+      &#39;&#39;----&#39;           | \/\.&#39; / /&#39;.  ||
+                        |\(()).&#39; /   \ ||
+                      _/ \ \/   /     \||
+              __..--&#39;&#39;    &#39;.   |      |||
+          .-&#39;&#39;            / &#39;._|/     |||
+         /                __.- /      /||
+         \   ____..-----&#39;&#39;    /      | ||
+          &#39;.     )).         |       / ||
+            &#39;&#39;._//  \        .-----./  ||
+                &#39;.   \      (.-----.)  ||
+                  &#39;.  \      |    /    ||
+                    )_ \     |   |     ||
+                   /__&#39;O\    ( ) (     ||
+     _______mrf,-&#39;____/|/__   |\  \    ||
+                              |    |   ||
+                              |____)  (__)
+                              &#39;-----&#39;  ||
+                               \   |   ||
+                                \  |   ||
+                                 \ |   ||
+                                  | \  ||
+                                  |_ \ ||
+                                  /_&#39;O\||
+                               .-&#39;___/(__)
+
+                               http://ascii.co.uk/art/guardiana
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Error.html" title="Eaco::Error (class)">Error</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the instance variable configured in authorize is not found</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Forbidden.html" title="Eaco::Forbidden (class)">Forbidden</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <code>current_user</code> is not granted access.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/controller.rb', line 156</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_confront_eaco'>confront_eaco</span>
+  <span class='id identifier rubyid_action'>action</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_intern'>intern</span>
+  <span class='id identifier rubyid_resource_ivar'>resource_ivar</span><span class='comma'>,</span> <span class='id identifier rubyid_permission'>permission</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_permission_for'>permission_for</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_resource_ivar'>resource_ivar</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_permission'>permission</span>
+    <span class='id identifier rubyid_resource'>resource</span> <span class='op'>=</span> <span class='id identifier rubyid_instance_variable_get'>instance_variable_get</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>@</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_resource_ivar'>resource_ivar</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='period'>.</span><span class='id identifier rubyid_intern'>intern</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_resource'>resource</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="Error.html" title="Eaco::Error (class)">Error</a></span></span><span class='comma'>,</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>        @</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_resource_ivar'>resource_ivar</span><span class='embexpr_end'>}</span><span class='tstring_content'> is not set, can&#39;t authorize </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='embexpr_end'>}</span><span class='tstring_content'>#</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_action'>action</span><span class='embexpr_end'>}</span><span class='tstring_content'>
+</span><span class='heredoc_end'>      EOF
+</span>    <span class='kw'>end</span>
+
+    <span class='kw'>unless</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_can?'>can?</span> <span class='id identifier rubyid_permission'>permission</span><span class='comma'>,</span> <span class='id identifier rubyid_resource'>resource</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="Forbidden.html" title="Eaco::Forbidden (class)">Forbidden</a></span></span><span class='comma'>,</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>        `</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_current_user'>current_user</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; not authorized to `</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_action'>action</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; on `</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_resource'>resource</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;
+</span><span class='heredoc_end'>      EOF
+</span>    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:49 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Eaco
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (E)</a> &raquo;
+    
+    
+    <span class="title">Eaco</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Eaco
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco.rb<span class="defines">,<br />
+  lib/eaco/acl.rb,<br /> lib/eaco/dsl.rb,<br /> lib/eaco/rake.rb,<br /> lib/eaco/actor.rb,<br /> lib/eaco/error.rb,<br /> lib/eaco/dsl/acl.rb,<br /> lib/eaco/railtie.rb,<br /> lib/eaco/version.rb,<br /> lib/eaco/adapters.rb,<br /> lib/eaco/coverage.rb,<br /> lib/eaco/cucumber.rb,<br /> lib/eaco/dsl/base.rb,<br /> lib/eaco/resource.rb,<br /> lib/eaco/dsl/actor.rb,<br /> lib/eaco/controller.rb,<br /> lib/eaco/designator.rb,<br /> lib/eaco/rake/utils.rb,<br /> lib/eaco/dsl/resource.rb,<br /> lib/eaco/cucumber/world.rb,<br /> lib/eaco/rake/default_task.rb,<br /> lib/eaco/dsl/actor/designators.rb,<br /> lib/eaco/adapters/active_record.rb,<br /> lib/eaco/cucumber/active_record.rb,<br /> lib/eaco/adapters/couchrest_model.rb,<br /> lib/eaco/dsl/resource/permissions.rb,<br /> lib/eaco/cucumber/active_record/user.rb,<br /> lib/eaco/cucumber/active_record/schema.rb,<br /> lib/eaco/cucumber/active_record/document.rb,<br /> lib/eaco/cucumber/active_record/position.rb,<br /> lib/eaco/cucumber/active_record/department.rb,<br /> lib/eaco/adapters/active_record/compatibility.rb,<br /> lib/eaco/adapters/active_record/postgres_jsonb.rb,<br /> lib/eaco/adapters/couchrest_model/couchdb_lucene.rb,<br /> lib/eaco/cucumber/active_record/user/designators.rb,<br /> lib/eaco/adapters/active_record/compatibility/v32.rb,<br /> lib/eaco/adapters/active_record/compatibility/v40.rb,<br /> lib/eaco/adapters/active_record/compatibility/v41.rb,<br /> lib/eaco/adapters/active_record/compatibility/v42.rb,<br /> lib/eaco/adapters/active_record/compatibility/scoped.rb,<br /> lib/eaco/cucumber/active_record/user/designators/user.rb,<br /> lib/eaco/cucumber/active_record/user/designators/position.rb,<br /> lib/eaco/cucumber/active_record/user/designators/department.rb,<br /> lib/eaco/cucumber/active_record/user/designators/authenticated.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Welcome to Eaco!</p>
+
+<p>Eaco is a full-fledged authorization framework for Ruby that allows you to describe which actions are allowed on your resources, how to identify your users as having a particular privilege and which privileges are granted to a specific resource through the usage of ACLs.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Eaco/Actor.html" title="Eaco::Actor (module)">Actor</a></span>, <span class='object_link'><a href="Eaco/Adapters.html" title="Eaco::Adapters (module)">Adapters</a></span>, <span class='object_link'><a href="Eaco/Controller.html" title="Eaco::Controller (module)">Controller</a></span>, <span class='object_link'><a href="Eaco/Coverage.html" title="Eaco::Coverage (module)">Coverage</a></span>, <span class='object_link'><a href="Eaco/Cucumber.html" title="Eaco::Cucumber (module)">Cucumber</a></span>, <span class='object_link'><a href="Eaco/DSL.html" title="Eaco::DSL (module)">DSL</a></span>, <span class='object_link'><a href="Eaco/Rake.html" title="Eaco::Rake (module)">Rake</a></span>, <span class='object_link'><a href="Eaco/Resource.html" title="Eaco::Resource (module)">Resource</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Eaco/ACL.html" title="Eaco::ACL (class)">ACL</a></span>, <span class='object_link'><a href="Eaco/Designator.html" title="Eaco::Designator (class)">Designator</a></span>, <span class='object_link'><a href="Eaco/Error.html" title="Eaco::Error (class)">Error</a></span>, <span class='object_link'><a href="Eaco/Forbidden.html" title="Eaco::Forbidden (class)">Forbidden</a></span>, <span class='object_link'><a href="Eaco/Malformed.html" title="Eaco::Malformed (class)">Malformed</a></span>, <span class='object_link'><a href="Eaco/Railtie.html" title="Eaco::Railtie (class)">Railtie</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="DEFAULT_RULES-constant" class="">DEFAULT_RULES =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>The location of the default rules file</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>Pathname</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>./config/authorization.rb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Current version</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0.8.0</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eval!-class_method" title="eval! (class method)">.<strong>eval!</strong>(source, path)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Evaluates the given authorization rules <code>source</code>, orignally found on <code>path</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_default_rules_file!-class_method" title="parse_default_rules_file! (class method)">.<strong>parse_default_rules_file!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses and evaluates the authorization rules from the <span class='object_link'><a href="#DEFAULT_RULES-constant" title="Eaco::DEFAULT_RULES (constant)">DEFAULT_RULES</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_rules!-class_method" title="parse_rules! (class method)">.<strong>parse_rules!</strong>(rules)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses the given <code>rules</code> file.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="eval!-class_method">
+  
+    .<strong>eval!</strong>(source, path)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Evaluates the given authorization rules <code>source</code>, orignally found on <code>path</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>source</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><span class='object_link'><a href="Eaco/DSL.html" title="Eaco::DSL (module)">DSL</a></span> source code</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Source code origin, for better backtraces.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Eaco/Error.html" title="Eaco::Error (class)">Error</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if something goes wrong while evaluating the DSL.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Eaco/DSL.html" title="Eaco::DSL (module)">DSL</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_eval!'>eval!</span><span class='lparen'>(</span><span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Eaco/DSL.html" title="Eaco::DSL (module)">DSL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='symbol'>:eval</span><span class='comma'>,</span> <span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='int'>1</span>
+
+  <span class='kw'>true</span>
+<span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="Eaco/Error.html" title="Eaco::Error (class)">Error</a></span></span><span class='comma'>,</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>
+=== EACO === Error while evaluating rules
+
+</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='embexpr_end'>}</span><span class='tstring_content'>
+
+ +--------- -- -
+ | </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_backtrace'>backtrace</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n | </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>
+ +-
+
+=== EACO ===
+
+</span><span class='heredoc_end'>  EOF
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_default_rules_file!-class_method">
+  
+    .<strong>parse_default_rules_file!</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses and evaluates the authorization rules from the <span class='object_link'><a href="#DEFAULT_RULES-constant" title="Eaco::DEFAULT_RULES (constant)">DEFAULT_RULES</a></span>.</p>
+
+<p>The authorization rules define all the authorization framework behaviour through the <span class='object_link'><a href="Eaco/DSL.html" title="Eaco::DSL (module)">DSL</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_parse_default_rules_file!'>parse_default_rules_file!</span>
+  <span class='id identifier rubyid_parse_rules!'>parse_rules!</span> <span class='const'><span class='object_link'><a href="#DEFAULT_RULES-constant" title="Eaco::DEFAULT_RULES (constant)">DEFAULT_RULES</a></span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_rules!-class_method">
+  
+    .<strong>parse_rules!</strong>(rules)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses the given <code>rules</code> file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>rules</span>
+      
+      
+        <span class='type'>(<tt>Pathname</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Eaco/Malformed.html" title="Eaco::Malformed (class)">Malformed</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <code>rules</code> file does not exist.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_parse_rules!'>parse_rules!</span><span class='lparen'>(</span><span class='id identifier rubyid_rules'>rules</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_rules'>rules</span><span class='period'>.</span><span class='id identifier rubyid_exist?'>exist?</span>
+    <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_rules'>rules</span><span class='period'>.</span><span class='id identifier rubyid_realpath'>realpath</span> <span class='kw'>rescue</span> <span class='id identifier rubyid_rules'>rules</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="Eaco/Malformed.html" title="Eaco::Malformed (class)">Malformed</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Please create </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='embexpr_end'>}</span><span class='tstring_content'> with Eaco authorization rules</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_eval!'>eval!</span> <span class='id identifier rubyid_rules'>rules</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='comma'>,</span> <span class='id identifier rubyid_rules'>rules</span><span class='period'>.</span><span class='id identifier rubyid_realpath'>realpath</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:49 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

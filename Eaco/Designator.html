@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Eaco::Designator
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco::Designator";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Eaco.html" title="Eaco (module)">Eaco</a></span></span>
+     &raquo; 
+    <span class="title">Designator</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Eaco::Designator
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">String</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">String</li>
+          
+            <li class="next">Eaco::Designator</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco/designator.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A Designator characterizes an Actor.</p>
+
+<p>Example: an User Actor is uniquely identified by its numerical <code>id</code>, as such we can define an <code>user</code> designator that designs User 42 as <code>user:42</code>.</p>
+
+<p>The same User also could belong to the group <code>frobber</code>, uniquely identified by its name. We can then define a <code>group</code> designator that would design the same User as <code>group:frobber</code>.</p>
+
+<p>In ACLs designators are given roles, and the intersection between the designators of an Actor and the ones defined in the ACL gives the role of the Actor for the Resource that the ACL secures.</p>
+
+<p>Designators for actors are defined through the DSL, see <span class='object_link'><a href="DSL/Actor.html" title="Eaco::DSL::Actor (class)">Eaco::DSL::Actor</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="ACL.html" title="Eaco::ACL (class)">ACL</a></span></li>
+    
+      <li><span class='object_link'><a href="Actor.html" title="Eaco::Actor (module)">Actor</a></span></li>
+    
+  </ul>
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Cucumber/ActiveRecord/User/Designators/Authenticated.html" title="Eaco::Cucumber::ActiveRecord::User::Designators::Authenticated (class)">Cucumber::ActiveRecord::User::Designators::Authenticated</a></span>, <span class='object_link'><a href="Cucumber/ActiveRecord/User/Designators/Department.html" title="Eaco::Cucumber::ActiveRecord::User::Designators::Department (class)">Cucumber::ActiveRecord::User::Designators::Department</a></span>, <span class='object_link'><a href="Cucumber/ActiveRecord/User/Designators/Position.html" title="Eaco::Cucumber::ActiveRecord::User::Designators::Position (class)">Cucumber::ActiveRecord::User::Designators::Position</a></span>, <span class='object_link'><a href="Cucumber/ActiveRecord/User/Designators/User.html" title="Eaco::Cucumber::ActiveRecord::User::Designators::User (class)">Cucumber::ActiveRecord::User::Designators::User</a></span></p>
+</div>
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#instance-instance_method" title="#instance (instance method)">#<strong>instance</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The instance given to <span class='object_link'><a href="#initialize-instance_method" title="Eaco::Designator#initialize (method)">#initialize</a></span>.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#value-instance_method" title="#value (instance method)">#<strong>value</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This designator unique ID in the namespace of the designator type.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#configure!-class_method" title="configure! (class method)">.<strong>configure!</strong>(options)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets up the designator implementation with the given options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#designator_name-class_method" title="designator_name (class method)">.<strong>designator_name</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns this class’ demodulized name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#harvest-class_method" title="harvest (class method)">.<strong>harvest</strong>(actor)  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Harvests valid designators for the given Actor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#id-class_method" title="id (class method)">.<strong>id</strong>  &#x21d2; Symbol </a>
+    
+
+    
+      (also: type)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the designator type.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#label-class_method" title="label (class method)">.<strong>label</strong>(value = nil)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets this Designator label to the given value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#make-class_method" title="make (class method)">.<strong>make</strong>(type, value)  &#x21d2; Designator </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Instantiate a designator of the given <code>type</code> with the given <code>value</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse-class_method" title="parse (class method)">.<strong>parse</strong>(string)  &#x21d2; Designator </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses a Designator string representation and instantiates a new Designator instance from it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#resolve-class_method" title="resolve (class method)">.<strong>resolve</strong>(designators)  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resolves one or more designators into the target actors.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#search-class_method" title="search (class method)">.<strong>search</strong>(query)  &#x21d2; Enumerable </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Searches designator definitions using the given query.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#as_json-instance_method" title="#as_json (instance method)">#<strong>as_json</strong>(options = nil)  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Converts this designator to an Hash for <code>.to_json</code> to work.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#describe-instance_method" title="#describe (instance method)">#<strong>describe</strong>(style = nil)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Should return an extended description for this designator.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(value, instance = nil)  &#x21d2; Designator </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initializes the designator with the given value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Pretty prints the designator in your console.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#label-instance_method" title="#label (instance method)">#<strong>label</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The designator’s class label.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#resolve-instance_method" title="#resolve (instance method)">#<strong>resolve</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Translates this designator to concrete Actor instances in your application.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#type-instance_method" title="#type (instance method)">#<strong>type</strong>  &#x21d2; Symbol </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The designator’s class type.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(value, instance = nil)  &#x21d2; <tt><span class='object_link'><a href="" title="Eaco::Designator (class)">Designator</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initializes the designator with the given value. The string representation is then calculated by concatenating the type and the given value.</p>
+
+<p>An optional instance can be attached, if you use to pass around designators in your app.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the unique ID valid in this designator namespace</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>instance</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Actor.html" title="Eaco::Actor (module)">Actor</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>optional Actor instance</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+195
+196
+197
+198</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 195</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_instance'>instance</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@value</span><span class='comma'>,</span> <span class='ivar'>@instance</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_instance'>instance</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='lbracket'>[</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span> <span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>:</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="instance=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="instance-instance_method">
+  
+    #<strong>instance</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The instance given to <span class='object_link'><a href="#initialize-instance_method" title="Eaco::Designator#initialize (method)">#initialize</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 204</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_instance'>instance</span>
+  <span class='ivar'>@instance</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="value-instance_method">
+  
+    #<strong>value</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This designator unique ID in the namespace of the designator type.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+201
+202
+203</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 201</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_value'>value</span>
+  <span class='ivar'>@value</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="configure!-class_method">
+  
+    .<strong>configure!</strong>(options)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets up the designator implementation with the given options. Currently:</p>
+<ul><li>
+<p><code>:from</code> - defines the method to call on the Actor to obtain the unique</p>
+
+<pre class="code ruby"><code class="ruby">IDs for this Designator class.
+</code></pre>
+</li></ul>
+
+<p>Example configuration:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_actor'>actor</span> <span class='const'>User</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_designators'>designators</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_user'>user</span>  <span class='label'>from:</span> <span class='symbol'>:id</span>
+    <span class='id identifier rubyid_group'>group</span> <span class='label'>from:</span> <span class='symbol'>:group_ids</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>This method is called from the DSL.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="DSL/Actor/Designators.html" title="Eaco::DSL::Actor::Designators (class)">Eaco::DSL::Actor::Designators</a></span></li>
+    
+      <li><span class='object_link'><a href="DSL/Actor/Designators.html#define_designator-instance_method" title="Eaco::DSL::Actor::Designators#define_designator (method)">Eaco::DSL::Actor::Designators#define_designator</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92
+93
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 90</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_configure!'>configure!</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='ivar'>@method</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:from</span><span class='rparen'>)</span>
+  <span class='kw'>self</span>
+
+<span class='kw'>rescue</span> <span class='const'>KeyError</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="Malformed.html" title="Eaco::Malformed (class)">Malformed</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The designator option :from is required</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="designator_name-class_method">
+  
+    .<strong>designator_name</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns this class’ demodulized name</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_designator_name'>designator_name</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>::</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="harvest-class_method">
+  
+    .<strong>harvest</strong>(actor)  &#x21d2; <tt>Array</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Harvests valid designators for the given Actor.</p>
+
+<p>It calls the <tt>@method</tt> defined through the <code>:from</code> option passed when configuring the designators (see <span class='object_link'><a href="#configure!-class_method" title="Eaco::Designator.configure! (method)">configure!</a></span>).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>actor</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Actor.html" title="Eaco::Actor (module)">Actor</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>an array of Designator objects the Actor owns.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Actor.html" title="Eaco::Actor (module)">Actor</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+110
+111
+112
+113
+114</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 110</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_harvest'>harvest</span><span class='lparen'>(</span><span class='id identifier rubyid_actor'>actor</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_list'>list</span> <span class='op'>=</span> <span class='id identifier rubyid_actor'>actor</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='ivar'>@method</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_list'>list</span> <span class='op'>=</span> <span class='id identifier rubyid_list'>list</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span> <span class='kw'>if</span> <span class='id identifier rubyid_list'>list</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:to_a</span><span class='rparen'>)</span>
+  <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_list'>list</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='op'>|</span> <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="id-class_method">
+  
+    .<strong>id</strong>  &#x21d2; <tt>Symbol</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='type-class_method'>type</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the designator type.</p>
+
+<p>The type symbol is derived from the class name, on the other way around, the <span class='object_link'><a href="DSL.html" title="Eaco::DSL (module)">Eaco::DSL</a></span> looks up designator implementation classes from the designator type symbol.</p>
+
+<p>Example:</p>
+
+<pre class="code ruby"><code class="ruby">&gt;&gt; User::Designators::Group.id
+=&gt; :group
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="DSL/Actor/Designators.html#implementation_for-instance_method" title="Eaco::DSL::Actor::Designators#implementation_for (method)">Eaco::DSL::Actor::Designators#implementation_for</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157
+158
+159
+160
+161</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 157</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='ivar'>@_id</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_designator_name'>designator_name</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([a-z])?([A-Z])</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+    <span class='lbracket'>[</span><span class='backref'>$1</span><span class='comma'>,</span> <span class='backref'>$2</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>_</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_intern'>intern</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="label-class_method">
+  
+    .<strong>label</strong>(value = nil)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets this Designator label to the given value.</p>
+
+<p>Example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>User</span><span class='op'>::</span><span class='const'>Designators</span><span class='op'>::</span><span class='const'>Group</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Eaco::Designator (class)">Designator</a></span></span>
+  <span class='id identifier rubyid_label'>label</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Active Directory Group</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the designator label</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the configured label</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+129
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 129</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_label'>label</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@label</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span>
+  <span class='ivar'>@label</span> <span class='op'>||=</span> <span class='id identifier rubyid_designator_name'>designator_name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="make-class_method">
+  
+    .<strong>make</strong>(type, value)  &#x21d2; <tt><span class='object_link'><a href="" title="Eaco::Designator (class)">Designator</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Instantiate a designator of the given <code>type</code> with the given <code>value</code>.</p>
+
+<p>Example:</p>
+
+<pre class="code ruby"><code class="ruby">&gt;&gt; Designator.make(&#39;user&#39;, 42)
+=&gt; #&lt;Designator(User) value:42&gt;
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>type</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the designator type (e.g. <code>user</code>)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the designator value. It will be stringified using <code>.to_s</code>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Eaco::Designator (class)">Designator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_make'>make</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="DSL.html" title="Eaco::DSL (module)">DSL</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="DSL/Actor.html" title="Eaco::DSL::Actor (class)">Actor</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_designator'><span class='object_link'><a href="DSL/Actor.html#find_designator-class_method" title="Eaco::DSL::Actor.find_designator (method)">find_designator</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse-class_method">
+  
+    .<strong>parse</strong>(string)  &#x21d2; <tt><span class='object_link'><a href="" title="Eaco::Designator (class)">Designator</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses a Designator string representation and instantiates a new Designator instance from it.</p>
+
+<pre class="code ruby"><code class="ruby">&gt;&gt; Designator.parse(&#39;user:42&#39;)
+=&gt; #&lt;Designator(User) value:42&gt;
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the designator string representation.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Eaco::Designator (class)">Designator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_string'>string</span> <span class='kw'>if</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="Eaco::Designator (class)">Designator</a></span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_make'>make</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>:</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="resolve-class_method">
+  
+    .<strong>resolve</strong>(designators)  &#x21d2; <tt>Array</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Resolves one or more designators into the target actors.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>designators</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>designator string representations.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>resolved actors, application-dependant.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_resolve'>resolve</span><span class='lparen'>(</span><span class='id identifier rubyid_designators'>designators</span><span class='rparen'>)</span>
+  <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_designators'>designators</span><span class='op'>||</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_ret'>ret</span><span class='comma'>,</span> <span class='id identifier rubyid_d'>d</span><span class='op'>|</span> <span class='id identifier rubyid_ret'>ret</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_d'>d</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_resolve'>resolve</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="search-class_method">
+  
+    .<strong>search</strong>(query)  &#x21d2; <tt>Enumerable</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Searches designator definitions using the given query.</p>
+
+<p>To be implemented by derived classes. E.g. for a “User” designator this would return your own User instances that you may want to display in a typeahead menu, for your Enterprise authorization management UI… :-)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>query</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the query to search against</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Enumerable</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>application <span class='object_link'><a href="Actor.html" title="Eaco::Actor (module)">Actor</a></span>s collection</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>NotImplementedError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+177
+178
+179
+180
+181</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 177</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_query'>query</span><span class='rparen'>)</span>
+  <span class='comment'># :nocov:
+</span>  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span>
+  <span class='comment'># :nocov:
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="as_json-instance_method">
+  
+    #<strong>as_json</strong>(options = nil)  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Converts this designator to an Hash for <code>.to_json</code> to work.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Ignored</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+241
+242
+243</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 241</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='lbrace'>{</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_describe'>describe</span><span class='lparen'>(</span><span class='symbol'>:full</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="describe-instance_method">
+  
+    #<strong>describe</strong>(style = nil)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Should return an extended description for this designator. You can then use this to display it in your application.</p>
+
+<p>E.g. for an “User” designator this would be the user name, for a “Group” designator this would be the group name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>style</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the description style. <span class='object_link'><a href="#as_json-instance_method" title="Eaco::Designator#as_json (method)">#as_json</a></span> uses <code>:full</code>, but you are free to define whatever styles you do see fit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the description</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+218
+219
+220</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 218</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_describe'>describe</span><span class='lparen'>(</span><span class='id identifier rubyid_style'>style</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    #<strong>inspect</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Pretty prints the designator in your console.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+250
+251
+252</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 250</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
+  <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>#&lt;Designator(</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_designator_name'>designator_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>) value:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>]</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="label-instance_method">
+  
+    #<strong>label</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the designator’s class label.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the designator’s class label.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#label-class_method" title="Eaco::Designator.label (method)">label</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+259
+260
+261</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 259</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_label'>label</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="resolve-instance_method">
+  
+    #<strong>resolve</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Translates this designator to concrete Actor instances in your application. To be implemented by derived classes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>NotImplementedError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+228
+229
+230
+231
+232</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 228</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_resolve'>resolve</span>
+  <span class='comment'># :nocov:
+</span>  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span>
+  <span class='comment'># :nocov:
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-instance_method">
+  
+    #<strong>type</strong>  &#x21d2; <tt>Symbol</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the designator’s class type.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the designator’s class type.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#type-class_method" title="Eaco::Designator.type (method)">type</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+268
+269
+270</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/designator.rb', line 268</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_type'>type</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:50 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

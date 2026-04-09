@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Eaco::Resource::ClassMethods
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco::Resource::ClassMethods";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span></span>
+     &raquo; 
+    <span class="title">ClassMethods</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Eaco::Resource::ClassMethods
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco/resource.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Singleton methods added to authorized Resources.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allows%3F-instance_method" title="#allows? (instance method)">#<strong>allows?</strong>(action, actor, resource)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks whether the <span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span> and permissions defined on this Resource allow the given <code>actor</code> to perform the given <code>action</code> on it, that depends on the <code>role</code> the user has on the resource, calculated from the <span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#permissions-instance_method" title="#permissions (instance method)">#<strong>permissions</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The permissions defined for each role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#role%3F-instance_method" title="#role? (instance method)">#<strong>role?</strong>(role)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>context of this Resource.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#role_of-instance_method" title="#role_of (instance method)">#<strong>role_of</strong>(actor_or_designator, resource)  &#x21d2; Symbol </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p><code>nil</code> if no access is granted.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#roles-instance_method" title="#roles (instance method)">#<strong>roles</strong>  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The defined roles.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#roles_priority-instance_method" title="#roles_priority (instance method)">#<strong>roles_priority</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Roles’ priority map keyed by role symbol.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#roles_with_labels-instance_method" title="#roles_with_labels (instance method)">#<strong>roles_with_labels</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Role labels map keyed by role symbol.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="allows?-instance_method">
+  
+    #<strong>allows?</strong>(action, actor, resource)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Checks whether the <span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span> and permissions defined on this Resource allow the given <code>actor</code> to perform the given <code>action</code> on it, that depends on the <code>role</code> the user has on the resource, calculated from the <span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>action</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>actor</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>resource</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/resource.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_allows?'>allows?</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_actor'>actor</span><span class='comma'>,</span> <span class='id identifier rubyid_resource'>resource</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_actor'>actor</span><span class='period'>.</span><span class='id identifier rubyid_is_admin?'>is_admin?</span>
+
+  <span class='id identifier rubyid_role'>role</span> <span class='op'>=</span> <span class='id identifier rubyid_role_of'>role_of</span><span class='lparen'>(</span><span class='id identifier rubyid_actor'>actor</span><span class='comma'>,</span> <span class='id identifier rubyid_resource'>resource</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_role'>role</span>
+
+  <span class='id identifier rubyid_perms'>perms</span> <span class='op'>=</span> <span class='id identifier rubyid_permissions'>permissions</span><span class='lbracket'>[</span><span class='id identifier rubyid_role'>role</span><span class='rbracket'>]</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_perms'>perms</span>
+
+  <span class='id identifier rubyid_perms'>perms</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="permissions-instance_method">
+  
+    #<strong>permissions</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The permissions defined for each role.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the defined permissions, keyed by <code>role</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="../DSL/Resource/Permissions.html" title="Eaco::DSL::Resource::Permissions (class)">DSL::Resource::Permissions</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/resource.rb', line 110</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_permissions'>permissions</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="role?-instance_method">
+  
+    #<strong>role?</strong>(role)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>context of this Resource.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>role</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>role name.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>checks whether the given <code>role</code> is valid in the</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/resource.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_role?'>role?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_roles'>roles</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="role_of-instance_method">
+  
+    #<strong>role_of</strong>(actor_or_designator, resource)  &#x21d2; <tt>Symbol</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p><code>nil</code> if no access is granted.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>actor_or_designator</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> or <span class='object_link'><a href="../Designator.html" title="Eaco::Designator (class)">Designator</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>resource</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the given <code>actor</code> role in the given resource, or</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/resource.rb', line 74</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_role_of'>role_of</span><span class='lparen'>(</span><span class='id identifier rubyid_actor_or_designator'>actor_or_designator</span><span class='comma'>,</span> <span class='id identifier rubyid_resource'>resource</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_designators'>designators</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_actor_or_designator'>actor_or_designator</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Designator.html" title="Eaco::Designator (class)">Designator</a></span></span><span class='rparen'>)</span>
+    <span class='lbracket'>[</span><span class='id identifier rubyid_actor_or_designator'>actor_or_designator</span><span class='rbracket'>]</span>
+
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_actor_or_designator'>actor_or_designator</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:designators</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_actor_or_designator'>actor_or_designator</span><span class='period'>.</span><span class='id identifier rubyid_designators'>designators</span>
+
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="../Error.html" title="Eaco::Error (class)">Error</a></span></span><span class='comma'>,</span> <span class='heredoc_beg'>&lt;&lt;-EOF</span>
+<span class='tstring_content'>      </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid___method__'>__method__</span><span class='embexpr_end'>}</span><span class='tstring_content'> expects </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_actor_or_designator'>actor_or_designator</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>
+      to be a Designator or to `respond_to?(:designators)`
+</span><span class='heredoc_end'>    EOF
+</span>  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_role_priority'>role_priority</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='id identifier rubyid_resource'>resource</span><span class='period'>.</span><span class='id identifier rubyid_acl'>acl</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_designator'>designator</span><span class='comma'>,</span> <span class='id identifier rubyid_role'>role</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_designators'>designators</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_designator'>designator</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_priority'>priority</span> <span class='op'>=</span> <span class='id identifier rubyid_roles_priority'>roles_priority</span><span class='lbracket'>[</span><span class='id identifier rubyid_role'>role</span><span class='rbracket'>]</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_priority'>priority</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_role_priority'>role_priority</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_priority'>priority</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_role_priority'>role_priority</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_role_priority'>role_priority</span> <span class='op'>=</span> <span class='id identifier rubyid_priority'>priority</span>
+      <span class='kw'>break</span> <span class='kw'>if</span> <span class='id identifier rubyid_role_priority'>role_priority</span> <span class='op'>==</span> <span class='int'>0</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_roles'>roles</span><span class='lbracket'>[</span><span class='id identifier rubyid_role_priority'>role_priority</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_role_priority'>role_priority</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="roles-instance_method">
+  
+    #<strong>roles</strong>  &#x21d2; <tt>Array</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The defined roles.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="../DSL/Resource.html" title="Eaco::DSL::Resource (class)">DSL::Resource</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/resource.rb', line 119</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_roles'>roles</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="roles_priority-instance_method">
+  
+    #<strong>roles_priority</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Roles’ priority map keyed by role symbol.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="../DSL/Resource.html" title="Eaco::DSL::Resource (class)">DSL::Resource</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/resource.rb', line 128</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_roles_priority'>roles_priority</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="roles_with_labels-instance_method">
+  
+    #<strong>roles_with_labels</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Role labels map keyed by role symbol</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="../DSL/Resource.html" title="Eaco::DSL::Resource (class)">DSL::Resource</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/resource.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_roles_with_labels'>roles_with_labels</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:49 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

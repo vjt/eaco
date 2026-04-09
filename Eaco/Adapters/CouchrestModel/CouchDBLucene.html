@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Eaco::Adapters::CouchrestModel::CouchDBLucene
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco::Adapters::CouchrestModel::CouchDBLucene";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Eaco.html" title="Eaco (module)">Eaco</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Adapters.html" title="Eaco::Adapters (module)">Adapters</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../CouchrestModel.html" title="Eaco::Adapters::CouchrestModel (module)">CouchrestModel</a></span></span>
+     &raquo; 
+    <span class="title">CouchDBLucene</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../../../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Eaco::Adapters::CouchrestModel::CouchDBLucene
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco/adapters/couchrest_model/couchdb_lucene.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Authorized collection extractor on CouchDB using the CouchDB Lucene full-text indexer &lt;<a href="https://github.com/ifad/couchdb-lucene">github.com/ifad/couchdb-lucene</a>&gt;, a patched CouchRest &lt;<a href="https://github.com/ifad/couchrest">github.com/ifad/couchrest</a>&gt; to interact with the “_fti” couchdb lucene API endpoint, and a patched CouchRest::Model &lt;<a href="https://github.com/ifad/couchrest_model">github.com/ifad/couchrest_model</a>&gt; that provides a search() API to run lucene queries.</p>
+
+<p>It requires an indexing strategy similar to the following:</p>
+
+<pre class="code ruby"><code class="ruby">{
+  _id: &quot;_design/lucene&quot;,
+  language: &quot;javascript&quot;,
+  fulltext: {
+    search: {
+      defaults: { store: &quot;no&quot; },
+      analyzer: &quot;perfield:{acl:\&quot;keyword\&quot;}&quot;,
+      index: function(doc) {
+
+        var acl = doc.acl;
+        if (!acl) {
+          return null;
+        }
+
+        var ret = new Document();
+
+        for (key in acl) {
+          ret.add(key, {
+            type: &#39;string&#39;,
+            field: &#39;acl&#39;,
+            index: &#39;not_analyzed&#39;
+          });
+        }
+
+        return ret;
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>Made in Italy.</p>
+
+<p>:nocov: because there are too many moving parts here and anyway we are going to deprecate this in favour of jsonb</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="../../ACL.html" title="Eaco::ACL (class)">Eaco::ACL</a></span></li>
+    
+      <li><span class='object_link'><a href="../../Actor.html" title="Eaco::Actor (module)">Eaco::Actor</a></span></li>
+    
+      <li><span class='object_link'><a href="../../Resource.html" title="Eaco::Resource (module)">Resource</a></span></li>
+    
+  </ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#accessible_by-instance_method" title="#accessible_by (instance method)">#<strong>accessible_by</strong>(actor)  &#x21d2; CouchRest::Model::Search::View </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Uses a Lucene query to extract Resources accessible by the given Actor.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="accessible_by-instance_method">
+  
+    #<strong>accessible_by</strong>(actor)  &#x21d2; <tt>CouchRest::Model::Search::View</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Uses a Lucene query to extract Resources accessible by the given Actor.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>actor</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Actor.html" title="Eaco::Actor (module)">Actor</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>CouchRest::Model::Search::View</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the authorized collection scope.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/couchrest_model/couchdb_lucene.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_accessible_by'>accessible_by</span><span class='lparen'>(</span><span class='id identifier rubyid_actor'>actor</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_actor'>actor</span><span class='period'>.</span><span class='id identifier rubyid_is_admin?'>is_admin?</span>
+
+  <span class='id identifier rubyid_designators'>designators</span> <span class='op'>=</span> <span class='id identifier rubyid_actor'>actor</span><span class='period'>.</span><span class='id identifier rubyid_designators'>designators</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_item'>item</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&quot;%s&quot;</span><span class='tstring_end'>&#39;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_item'>item</span> <span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_search'>search</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>acl:(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_designators'>designators</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> OR </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:49 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Eaco::Adapters::ActiveRecord::PostgresJSONb
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco::Adapters::ActiveRecord::PostgresJSONb";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Eaco.html" title="Eaco (module)">Eaco</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Adapters.html" title="Eaco::Adapters (module)">Adapters</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../ActiveRecord.html" title="Eaco::Adapters::ActiveRecord (module)">ActiveRecord</a></span></span>
+     &raquo; 
+    <span class="title">PostgresJSONb</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../../../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Eaco::Adapters::ActiveRecord::PostgresJSONb
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco/adapters/active_record/postgres_jsonb.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Authorized collection extractor on PostgreSQL &gt;= 9.4 and a <code>jsonb</code> column named <code>acl</code>.</p>
+
+<p>TODO negative authorizations (using a separate column?)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="../../ACL.html" title="Eaco::ACL (class)">Eaco::ACL</a></span></li>
+    
+      <li><span class='object_link'><a href="../../Actor.html" title="Eaco::Actor (module)">Eaco::Actor</a></span></li>
+    
+      <li><span class='object_link'><a href="../../Resource.html" title="Eaco::Resource (module)">Resource</a></span></li>
+    
+  </ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#accessible_by-instance_method" title="#accessible_by (instance method)">#<strong>accessible_by</strong>(actor)  &#x21d2; ActiveRecord::Relation </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Uses the json key existance operator <tt>?|</tt> to check whether one of the <code>Actor</code>‘s <code>Designator</code> instances exist as keys in the <code>ACL</code> objects.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="accessible_by-instance_method">
+  
+    #<strong>accessible_by</strong>(actor)  &#x21d2; <tt>ActiveRecord::Relation</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Uses the json key existance operator <tt>?|</tt> to check whether one of the <code>Actor</code>‘s <code>Designator</code> instances exist as keys in the <code>ACL</code> objects.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>actor</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Actor.html" title="Eaco::Actor (module)">Actor</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ActiveRecord::Relation</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the authorized collection scope.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/adapters/active_record/postgres_jsonb.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_accessible_by'>accessible_by</span><span class='lparen'>(</span><span class='id identifier rubyid_actor'>actor</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_scoped'>scoped</span> <span class='kw'>if</span> <span class='id identifier rubyid_actor'>actor</span><span class='period'>.</span><span class='id identifier rubyid_is_admin?'>is_admin?</span>
+
+  <span class='id identifier rubyid_designators'>designators</span> <span class='op'>=</span> <span class='id identifier rubyid_actor'>actor</span><span class='period'>.</span><span class='id identifier rubyid_designators'>designators</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_d'>d</span><span class='op'>|</span> <span class='id identifier rubyid_quote_value'>quote_value</span><span class='lparen'>(</span><span class='id identifier rubyid_d'>d</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>acl ?| array[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_designators'>designators</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>]::varchar[]</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:49 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Eaco::Cucumber::World
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Eaco::Cucumber::World";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (W)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Cucumber.html" title="Eaco::Cucumber (module)">Cucumber</a></span></span>
+     &raquo; 
+    <span class="title">World</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Eaco::Cucumber::World
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Eaco::Cucumber::World</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/eaco/cucumber/world.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The world in which scenarios are run. This is a story and an example, real-world data model that can be effectively protected by Eaco.</p>
+
+<p>But <tt>before { some :art }</tt></p>
+
+<h2 id="label-AYANAMI+REI">AYANAMI REI</h2>
+
+<pre class="code ruby"><code class="ruby">                                   __.-&quot;..--,__
+                              __..---&quot;  | _|    &quot;-_\
+                       __.---&quot;          | V|::.-&quot;-._D
+                  _--&quot;&quot;.-.._   ,,::::::&#39;&quot;\/&quot;&quot;&#39;-:-:/
+             _.-&quot;&quot;::_:_:::::&#39;-8b---&quot;            &quot;&#39;
+          .-/  ::::&lt;  |\::::::&quot;\
+          \/:::/::::&#39;\\ |:::b::\
+          /|::/:::/::::-::b:%b:\|
+           \/::::d:|8:::b:&quot;%%%%%\
+           |\:b:dP:d.:::%%%%%&quot;&quot;&quot;-,
+            \:\.V-/ _\b%P_   /  .-._
+            &#39;|T\   &quot;%j d:::--\.(    &quot;-.
+            ::d&lt;   -&quot; d%|:::do%P&quot;-:.   &quot;-,
+            |:I _    /%%%o::o8P    &quot;\.    &quot;\
+             \8b     d%%%%%%P&quot;&quot;-._ _ \::.    \
+             \%%8  _./Y%%P/      .::&#39;-oMMo    )
+               H&quot;&#39;|V  |  A:::...:odMMMMMM(  ./
+               H /_.--&quot;JMMMMbo:d##########b/
+            .-&#39;o      dMMMMMMMMMMMMMMP&quot;&quot;
+          /&quot; /       YMMMMMMMMM|
+        /   .   .    &quot;MMMMMMMM/
+        :..::..:::..  MMMMMMM:|
+         \:/ \::::::::JMMMP&quot;:/
+          :Ao &#39;:__.-&#39;MMMP:::Y
+          dMM&quot;./:::::::::-.Y
+         _|b::od8::/:YM::/
+         I HMMMP::/:/&quot;Y/&quot;
+          \&#39;&quot;&quot;&#39;  &#39;&#39;:|
+           |    -::::\
+           |  :-._ &#39;::\
+           |,.|    \ _:&quot;o
+           | d&quot; /   &quot; \_:\.
+           &quot;.Y. \       \::\
+            \ \  \      MM\:Y
+             Y \  |     MM \:b
+             &gt;\ Y      .MM  MM
+             .IY L_    MP&#39;  MP
+             |  \:|   JM   JP
+             |  :\|   MP   MM
+             |  :::  JM&#39;  JP|
+             |  &#39;:&#39; JP   JM |
+             L   : JP    MP |
+             0   | Y    JM  |
+             0   |     JP&quot;  |
+             0   |    JP    |
+             m   |   JP     #
+             I   |  JM&quot;     Y
+             l   |  MP     :&quot;
+             |\  :-       :|
+             | | &#39;.\      :|
+             | | &quot;| \     :|
+              \    \ \    :|
+              |  |  | \   :|
+              |  |  |   \ :|
+              |   \ \    | &#39;.
+              |    |:\   | :|
+              \    |::\..|  :\
+               &quot;. /::::::&#39;  :||
+                 :|::/:::|  /:\
+                 | \/::|: \&#39; ::|
+                 |  :::||    ::|
+                 |   ::||    ::|
+                 |   ::||    ::|
+                 |   ::||    ::|
+                 |   &#39;: |    .:|
+                 |    : |    :|
+                 |    : |    :|
+                 |    :||   .:|
+                 |   ::\   .:|
+                |    :::  .::|
+               /     ::|  :::|
+            __/     .::|   &#39;:|
+   ...----&quot;&quot;        ::/     ::
+  /m_  AMm          &#39;/     .:::
+  &quot;&quot;MmmMMM#mmMMMMMMM&quot;     .:::m
+     &quot;&quot;&quot;YMMM&quot;&quot;&quot;&quot;&quot;&quot;P        &#39;:mMI
+              _&#39;           _MMMM
+          _.-&quot;  mm   mMMMMMMMM&quot;
+         /      MMMMMMM&quot;&quot;
+         mmmmmmMMMM&quot;
+                          ch1x0r
+
+http://ascii.co.uk/art/anime
+</code></pre>
+
+<h1 id="label-Scenario">Scenario</h1>
+
+<p>In this imaginary world we are  N E R V, a Top Secret organization that handles very confidential documents. Some users can read them, some can edit them, and very few bosses can destroy them.</p>
+
+<p>The organization employs internal staff and employs consultants.  Staff members have official positions in the organization hierarchy, and they belong to units within departments. They have the big picture.</p>
+
+<p>Consultants, on the other hand, come and go, and work on small parts of the documents, for specific purposes. They do not have the big picture.</p>
+
+<p>Departments own the documents, not people. Documents are of interest of departments, sometimes they should be accessed by the whole house, some other time only few selected users, some times two specific departments or some units.</p>
+
+<p>Either way, most of the time, access is granted to who owns a peculiar authority within the organization and not to a specific person. People may change, authorities and rules change less often.</p>
+
+<h1 id="label-Mapping+Eaco+concepts">Mapping Eaco concepts</h1>
+
+<p>The <code>Document</code> is a <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span></p>
+
+<p>Each instance of a <code>Document</code> has an <span class='object_link'><a href="../ACL.html" title="Eaco::ACL (class)">ACL</a></span> <code>.acl</code> attribute.</p>
+
+<p>The <code>:reader</code>, <code>:editor</code> and <code>:owner</code> are Roles on the Document resource, and each role is granted a Permission.</p>
+
+<p>The User is a <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span>.</p>
+
+<p>Having an user account is the <span class='object_link'><a href="../Designator.html" title="Eaco::Designator (class)">Designator</a></span> of type <code>:user</code>. Occupying an official position is the Designator of type <code>:position</code>. Belonging to a department is the Designator of type <code>:department</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#actors-instance_method" title="#actors (instance method)">#<strong>actors</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>All registered <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> instances.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#authorize_model-instance_method" title="#authorize_model (instance method)">#<strong>authorize_model</strong>(name, definition)  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Authorizes model with the given <span class='object_link'><a href="../DSL.html" title="Eaco::DSL (module)">DSL</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_documents-instance_method" title="#check_documents (instance method)">#<strong>check_documents</strong>(names, &amp;block)  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks the given block on the given set of <code>Document</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eval_dsl-instance_method" title="#eval_dsl (instance method)">#<strong>eval_dsl</strong>(code, model = nil)  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Evaluates the given <span class='object_link'><a href="../DSL.html" title="Eaco::DSL (module)">DSL</a></span> code, substituting the <tt>$MODEL</tt> string with the given model name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fetch_actor-instance_method" title="#fetch_actor (instance method)">#<strong>fetch_actor</strong>(name)  &#x21d2; Actor </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Fetches an <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> instance by name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fetch_resource-instance_method" title="#fetch_resource (instance method)">#<strong>fetch_resource</strong>(model, name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Fetches a <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> instance by name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find_model-instance_method" title="#find_model (instance method)">#<strong>find_model</strong>(model_name)  &#x21d2; Class </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a model in the <span class='object_link'><a href="ActiveRecord.html" title="Eaco::Cucumber::ActiveRecord (module)">ActiveRecord</a></span> namespace.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>  &#x21d2; World </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets up the World:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_actor-instance_method" title="#register_actor (instance method)">#<strong>register_actor</strong>(model, name, options = {})  &#x21d2; Actor </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Registers and persists an <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> instance with the given <code>name</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_resource-instance_method" title="#register_resource (instance method)">#<strong>register_resource</strong>(model, name)  &#x21d2; Resource </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Registers and persists <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> instance with the given name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#resources-instance_method" title="#resources (instance method)">#<strong>resources</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>All registered <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> instances.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Eaco::Cucumber::World (class)">World</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets up the World:</p>
+<ul><li>
+<p>Connect to ActiveRecord</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+139
+140
+141</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 139</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='const'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Cucumber.html" title="Eaco::Cucumber (module)">Cucumber</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveRecord.html" title="Eaco::Cucumber::ActiveRecord (module)">ActiveRecord</a></span></span><span class='period'>.</span><span class='id identifier rubyid_connect!'><span class='object_link'><a href="ActiveRecord.html#connect!-instance_method" title="Eaco::Cucumber::ActiveRecord#connect! (method)">connect!</a></span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="actors-instance_method">
+  
+    #<strong>actors</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>All registered <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> instances.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>actors keyed by name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+232
+233
+234</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 232</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_actors'>actors</span>
+  <span class='ivar'>@actors</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="authorize_model-instance_method">
+  
+    #<strong>authorize_model</strong>(name, definition)  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Authorizes model with the given <span class='object_link'><a href="../DSL.html" title="Eaco::DSL (module)">DSL</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the model name</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>definition</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the <span class='object_link'><a href="../DSL.html" title="Eaco::DSL (module)">DSL</a></span> code</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>Eaco::Cucumber::World.{{#find_model}</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+152
+153
+154
+155
+156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 152</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_authorize_model'>authorize_model</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_definition'>definition</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='id identifier rubyid_find_model'>find_model</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_eval_dsl'>eval_dsl</span> <span class='id identifier rubyid_definition'>definition</span><span class='comma'>,</span> <span class='id identifier rubyid_model'>model</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_documents-instance_method">
+  
+    #<strong>check_documents</strong>(names, &amp;block)  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Checks the given block on the given set of <code>Document</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>names</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the document names, separated by <tt>,</tt></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>block</span>
+      
+      
+        <span class='type'>(<tt>Proc</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the code to run on each <code>Document</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="ActiveRecord/Document.html" title="Eaco::Cucumber::ActiveRecord::Document (class)">ActiveRecord::Document</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+256
+257
+258
+259
+260</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 256</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_documents'>check_documents</span><span class='lparen'>(</span><span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='id identifier rubyid_find_model'>find_model</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Document</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_names'>names</span> <span class='op'>=</span> <span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>,\s*</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='id identifier rubyid_names'>names</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eval_dsl-instance_method">
+  
+    #<strong>eval_dsl</strong>(code, model = nil)  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Evaluates the given <span class='object_link'><a href="../DSL.html" title="Eaco::DSL (module)">DSL</a></span> code, substituting the <tt>$MODEL</tt> string with the given model name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>code</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the DSL code to eval</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the model name to substitute (optional)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+285
+286
+287
+288
+289</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 285</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_eval_dsl'>eval_dsl</span><span class='lparen'>(</span><span class='id identifier rubyid_code'>code</span><span class='comma'>,</span> <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='comment'># Sub in place to print final code when running cucumber
+</span>  <span class='id identifier rubyid_code'>code</span><span class='period'>.</span><span class='id identifier rubyid_sub!'>sub!</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>$MODEL</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='kw'>if</span> <span class='id identifier rubyid_model'>model</span>
+  <span class='const'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='period'>.</span><span class='id identifier rubyid_eval!'><span class='object_link'><a href="../../Eaco.html#eval!-class_method" title="Eaco.eval! (method)">eval!</a></span></span> <span class='id identifier rubyid_code'>code</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>(feature)</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fetch_actor-instance_method">
+  
+    #<strong>fetch_actor</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Fetches an <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> instance by name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the actor name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the registered actor name</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RuntimeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the actor is not found in the registry</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+185
+186
+187
+188
+189
+190
+191</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 185</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fetch_actor'>fetch_actor</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_actors'>actors</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>KeyError</span>
+  <span class='comment'># :nocov:
+</span>  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Actor &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; not found in registry</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'># :nocov:
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fetch_resource-instance_method">
+  
+    #<strong>fetch_resource</strong>(model, name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Fetches a <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> instance by name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> model name</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+219
+220
+221
+222
+223
+224
+225</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 219</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fetch_resource'>fetch_resource</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>KeyError</span>
+  <span class='comment'># :nocov:
+</span>  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Resource </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_content'> &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; not found in registry</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'># :nocov:
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find_model-instance_method">
+  
+    #<strong>find_model</strong>(model_name)  &#x21d2; <tt>Class</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a model in the <span class='object_link'><a href="ActiveRecord.html" title="Eaco::Cucumber::ActiveRecord (module)">ActiveRecord</a></span> namespace.</p>
+
+<p>Example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="" title="Eaco::Cucumber::World (class)">World</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_model'>find_model</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Document</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model_name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the model name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+272
+273
+274</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 272</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find_model'>find_model</span><span class='lparen'>(</span><span class='id identifier rubyid_model_name'>model_name</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../../Eaco.html" title="Eaco (module)">Eaco</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Cucumber.html" title="Eaco::Cucumber (module)">Cucumber</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ActiveRecord.html" title="Eaco::Cucumber::ActiveRecord (module)">ActiveRecord</a></span></span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='id identifier rubyid_model_name'>model_name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_actor-instance_method">
+  
+    #<strong>register_actor</strong>(model, name, options = {})  &#x21d2; <tt><span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Registers and persists an <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> instance with the given <code>name</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> model name</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> instance name</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the only supported one is <code>admin</code>, and specifies whether this <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> an admin</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the newly created <span class='object_link'><a href="../Actor.html" title="Eaco::Actor (module)">Actor</a></span> instance.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170
+171
+172
+173
+174
+175
+176</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 168</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_actor'>register_actor</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_actor_model'>actor_model</span> <span class='op'>=</span> <span class='id identifier rubyid_find_model'>find_model</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_actors'>actors</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_actor_model'>actor_model</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_actor'>actor</span><span class='op'>|</span>
+    <span class='id identifier rubyid_actor'>actor</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>  <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span>
+    <span class='id identifier rubyid_actor'>actor</span><span class='period'>.</span><span class='id identifier rubyid_admin'>admin</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:admin</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_actor'>actor</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_resource-instance_method">
+  
+    #<strong>register_resource</strong>(model, name)  &#x21d2; <tt><span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Registers and persists <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> instance with the given name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> model name</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the newly instantiated <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 201</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_resource'>register_resource</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_resource_model'>resource_model</span> <span class='op'>=</span> <span class='id identifier rubyid_find_model'>find_model</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_resource'>resource</span> <span class='op'>=</span> <span class='id identifier rubyid_resource_model'>resource_model</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_resource'>resource</span><span class='op'>|</span>
+    <span class='id identifier rubyid_resource'>resource</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span>
+    <span class='id identifier rubyid_resource'>resource</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_resources'>resources</span><span class='lbracket'>[</span><span class='id identifier rubyid_model'>model</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_resources'>resources</span><span class='lbracket'>[</span><span class='id identifier rubyid_model'>model</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_resource'>resource</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="resources-instance_method">
+  
+    #<strong>resources</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>All registered <span class='object_link'><a href="../Resource.html" title="Eaco::Resource (module)">Resource</a></span> instances.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>resources keyed by model name with <tt>Hash</tt>es as values keyed by resource name.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+242
+243
+244</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/eaco/cucumber/world.rb', line 242</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_resources'>resources</span>
+  <span class='ivar'>@resources</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:50 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>

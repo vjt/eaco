@@ -1,0 +1,3727 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Feature: Role-based, flexible authorization
+  
+    &mdash; Documentation by YARD 0.9.39
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/cucumber.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "requirements::features::enterprise_authorization";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/cucumber.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../feature_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (e)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../requirements.html" title="requirements (requirements)">requirements</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../features.html" title="requirements::features (featuredirectory)">features</a></span></span>
+     &raquo; 
+    <span class="title">enterprise_authorization</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="feature_list_link"
+        href="../../feature_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".developer").hide();
+  $(".scenario .title").css('cursor','pointer');
+});
+</script>
+
+<div class="feature">
+  <div class="title">
+    <a id="view" class="control" href="#">[More Detail]</a>
+    <a id="expand" class="control" href="#">[Collapse All]</a>
+    <div style="clear: right;"></div>
+    <span class="pre">Feature:</span>
+    <span class="name">Role-based, flexible authorization</span>
+  </div>
+
+  
+
+  <div class="description">
+    &nbsp;&nbsp;In&nbsp;an&nbsp;enterprise,&nbsp;rights&nbsp;might&nbsp;be&nbsp;granted&nbsp;to&nbsp;specific&nbsp;users,&nbsp;to&nbsp;any&nbsp;users,<br/>&nbsp;&nbsp;or&nbsp;to&nbsp;specific&nbsp;departments&nbsp;or&nbsp;to&nbsp;specific&nbsp;positions&nbsp;in&nbsp;said&nbsp;departments.
+  </div>
+
+  <div class="meta">
+    <div class="file developer">features/enterprise_authorization.feature</div>
+    <div style="clear: right;"></div>
+    <div class="tags developer">
+      
+    </div>
+  </div>
+
+  
+</div>
+
+<div class="scenario background">
+  <a name="background" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Background:</span>
+      <span class="name"></span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#background">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:5</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">Given </span>
+
+    
+
+      
+        <span class="defined">
+          I have an <span class='match'>User</span> actor defined as
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  <div class="text">
+  actor&nbsp;$MODEL&nbsp;do<br/>&nbsp;&nbsp;designators&nbsp;do<br/>&nbsp;&nbsp;&nbsp;&nbsp;authenticated&nbsp;from:&nbsp;:class<br/>&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from:&nbsp;:id<br/>&nbsp;&nbsp;&nbsp;&nbsp;position&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from:&nbsp;:position_ids<br/>&nbsp;&nbsp;&nbsp;&nbsp;department&nbsp;&nbsp;&nbsp;&nbsp;from:&nbsp;:department_names<br/>&nbsp;&nbsp;end<br/>end
+</div>
+
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Given </span>
+
+    
+
+      
+        <span class="defined">
+          I have a <span class='match'>Document</span> resource defined as
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition17-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  <div class="text">
+  authorize&nbsp;$MODEL,&nbsp;using:&nbsp;:pg_jsonb&nbsp;do<br/>&nbsp;&nbsp;roles&nbsp;:writer,&nbsp;:reader<br/><br/>&nbsp;&nbsp;role&nbsp;:reader,&nbsp;&quot;R/O&quot;<br/>&nbsp;&nbsp;role&nbsp;:writer,&nbsp;&quot;R/W&quot;<br/><br/>&nbsp;&nbsp;permissions&nbsp;do<br/>&nbsp;&nbsp;&nbsp;&nbsp;reader&nbsp;:read<br/>&nbsp;&nbsp;&nbsp;&nbsp;writer&nbsp;reader,&nbsp;:write<br/>&nbsp;&nbsp;end<br/>end
+</div>
+
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">Given </span>
+
+    
+
+      
+        <span class="defined">
+          I have the following <span class='match'>User</span> records
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition16-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">id</th>
+        
+          <th class="even">name</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>1</td>
+        
+          <td>Dennis Ritchie</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>2</td>
+        
+          <td>Rob Pike</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>3</td>
+        
+          <td>William Gates</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>4</td>
+        
+          <td>Steve Jobs</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>5</td>
+        
+          <td>Tim Berners-Lee</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Given </span>
+
+    
+
+      
+        <span class="defined">
+          I have the following <span class='match'>Department</span> records
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition16-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">id</th>
+        
+          <th class="even">name</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>1</td>
+        
+          <td>ICT</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>2</td>
+        
+          <td>BAR</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>3</td>
+        
+          <td>COM</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">Given </span>
+
+    
+
+      
+        <span class="defined">
+          I have the following <span class='match'>Position</span> records
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition16-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">id</th>
+        
+          <th class="even">name</th>
+        
+          <th class="odd">department_id</th>
+        
+          <th class="even">user_id</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>1</td>
+        
+          <td>Director</td>
+        
+          <td>1</td>
+        
+          <td>1</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>2</td>
+        
+          <td>Systems Analyst</td>
+        
+          <td>1</td>
+        
+          <td>2</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>3</td>
+        
+          <td>Bartender</td>
+        
+          <td>2</td>
+        
+          <td>3</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>4</td>
+        
+          <td>Director</td>
+        
+          <td>3</td>
+        
+          <td>4</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>5</td>
+        
+          <td>Social Media Manager</td>
+        
+          <td>3</td>
+        
+          <td>5</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Given </span>
+
+    
+
+      
+        <span class="defined">
+          I have the following <span class='match'>Document</span> records
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition16-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">name</th>
+        
+          <th class="even">acl</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>ICT Status Report</td>
+        
+          <td>{&quot;department:ICT&quot;:&quot;reader&quot;, &quot;position:1&quot;:&quot;writer&quot;}</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>ICT Budget Report</td>
+        
+          <td>{&quot;position:1&quot;:&quot;writer&quot;}</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Cafeteria Menu</td>
+        
+          <td>{&quot;position:3&quot;:&quot;writer&quot;, &quot;authenticated:Eaco::Cucumber::ActiveRecord::User&quot;:&quot;reader&quot;}</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Tim&#39;s Web Project</td>
+        
+          <td>{&quot;user:5&quot;:&quot;writer&quot;, &quot;position:2&quot;:&quot;reader&quot;}</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_0">
+  <a name="scenario_0" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Granting access in batches</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_0">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:61</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I have a confidential <span class='match'>Document</span> named "<span class='match'>For BAR and ICT</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition18-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I grant access to <span class='match'>Document</span> "<span class='match'>For BAR and ICT</span>" to the following designators as <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition5-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">department:BAR</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>department:ICT</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Dennis Ritchie</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>read</span> the Document "<span class='match'>For BAR and ICT</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">But </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>write</span> the Document "<span class='match'>For BAR and ICT</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Rob Pike</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>read</span> the Document "<span class='match'>For BAR and ICT</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">But </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>write</span> the Document "<span class='match'>For BAR and ICT</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>William Gates</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>read</span> the Document "<span class='match'>For BAR and ICT</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">But </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>write</span> the Document "<span class='match'>For BAR and ICT</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Steve Jobs</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>read</span> the Document "<span class='match'>For BAR and ICT</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>write</span> the Document "<span class='match'>For BAR and ICT</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_1">
+  <a name="scenario_1" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">The Director can access confidential document</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_1">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:80</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Dennis Ritchie</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>read</span> the Document "<span class='match'>ICT Status Report</span>" being a <span class='match'>writer</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>write</span> the Document "<span class='match'>ICT Budget Report</span>" being a <span class='match'>writer</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>read</span> the Document "<span class='match'>Cafeteria Menu</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">But </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>read</span> the Document "<span class='match'>Tim&#39;s Web Project</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I ask for Documents I can access, I get
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition28-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">ICT Status Report</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>ICT Budget Report</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Cafeteria Menu</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_2">
+  <a name="scenario_2" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Rob can see Tim&#39;s document</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_2">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:91</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Rob Pike</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>read</span> the Documents "<span class='match'>ICT Status Report, Tim&#39;s Web Project</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">But </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>write</span> the Document "<span class='match'>Tim&#39;s Web Project</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I ask for Documents I can access, I get
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition28-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">ICT Status Report</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>Tim&#39;s Web Project</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Cafeteria Menu</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_3">
+  <a name="scenario_3" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Tim can work on his project</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_3">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:100</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Tim Berners-Lee</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>read</span> the Document "<span class='match'>ICT Status Report, ICT Budget Report</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>read</span> the Document "<span class='match'>Tim&#39;s Web Project</span>" being a <span class='match'>writer</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>write</span> the Document "<span class='match'>Tim&#39;s Web Project</span>" being a <span class='match'>writer</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I ask for Documents I can access, I get
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition28-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Tim&#39;s Web Project</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>Cafeteria Menu</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_4">
+  <a name="scenario_4" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Bill is maintaining the Cafeteria Menu</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_4">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:109</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>William Gates</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>read</span> the Documents "<span class='match'>ICT Status Report, ICT Budget Report, Tim&#39;s Web Project</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">But </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>write</span> the Document "<span class='match'>Cafeteria Menu</span>" being a <span class='match'>writer</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I ask for Documents I can access, I get
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition28-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Cafeteria Menu</th>
+        
+      </tr>
+    </thead>
+
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_5">
+  <a name="scenario_5" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Steve can just read the menu</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_5">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:116</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Steve Jobs</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>read</span> the Documents "<span class='match'>ICT Status Report, ICT Budget Report, Tim&#39;s Web Project</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I can not <span class='match'>write</span> the Document "<span class='match'>Cafeteria Menu</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition27-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">But </span>
+
+    
+
+      
+        <span class="defined">
+          I can <span class='match'>read</span> the Document "<span class='match'>Cafeteria Menu</span>" being a <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition26-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I ask for Documents I can access, I get
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition28-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Cafeteria Menu</th>
+        
+      </tr>
+    </thead>
+
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_6">
+  <a name="scenario_6" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Resolving a specific user</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_6">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:124</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I parse the Designator "<span class='match'>user:4</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition30-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          it should describe itself as "<span class='match'>User &#39;Steve Jobs&#39;</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition32-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should have a label of "<span class='match'>User</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition34-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should serialize to JSON as <span class='match'>{&quot;label&quot;: &quot;User &#39;Steve Jobs&#39;&quot;, &quot;value&quot;: &quot;user:4&quot;}</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition33-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should resolve itself to
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition35-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Steve Jobs</th>
+        
+      </tr>
+    </thead>
+
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_7">
+  <a name="scenario_7" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Resolving the ICT Director</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_7">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:132</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I make a Designator with "<span class='match'>position</span>" and "<span class='match'>1</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition29-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          it should describe itself as "<span class='match'>Director in ICT</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition32-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should have a label of "<span class='match'>Position</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition34-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should serialize to JSON as <span class='match'>{&quot;label&quot;: &quot;Director in ICT&quot;, &quot;value&quot;: &quot;position:1&quot;}</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition33-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should resolve itself to
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition35-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Dennis Ritchie</th>
+        
+      </tr>
+    </thead>
+
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_8">
+  <a name="scenario_8" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Resolving the ICT Department</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_8">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:140</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I parse the Designator "<span class='match'>department:ICT</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition30-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          it should describe itself as "<span class='match'>ICT</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition32-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should have a label of "<span class='match'>Department</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition34-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should serialize to JSON as <span class='match'>{&quot;label&quot;: &quot;ICT&quot;, &quot;value&quot;: &quot;department:ICT&quot;}</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition33-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should resolve itself to
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition35-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Dennis Ritchie</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>Rob Pike</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_9">
+  <a name="scenario_9" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Resolving all authenticated users</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_9">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:149</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I make a Designator with "<span class='match'>authenticated</span>" and "<span class='match'>Eaco::Cucumber::ActiveRecord::User</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition29-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          it should describe itself as "<span class='match'>Any authenticated user</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition32-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should have a label of "<span class='match'>Any user</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition34-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should serialize to JSON as <span class='match'>{&quot;label&quot;: &quot;Any authenticated user&quot;, &quot;value&quot;: &quot;authenticated:Eaco::Cucumber::ActiveRecord::User&quot;}</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition33-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          it should resolve itself to
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition35-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Dennis Ritchie</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>Rob Pike</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>William Gates</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Steve Jobs</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Tim Berners-Lee</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_10">
+  <a name="scenario_10" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Resolving different designators</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_10">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:161</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I have the following designators
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition36-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">department:ICT</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>position:3</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>user:1</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          they should resolve to
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition37-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Dennis Ritchie</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>Rob Pike</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>William Gates</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_11">
+  <a name="scenario_11" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Resolving an invalid designator</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_11">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:171</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I parse the invalid Designator "<span class='match'>foo:on the rocks</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition12-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I should receive a Designator error <span class='match'>Eaco::Error</span> saying
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition13-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  <div class="text">
+  Designator&nbsp;not&nbsp;found:&nbsp;&quot;foo&quot;
+</div>
+
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_12">
+  <a name="scenario_12" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Obtaining the role of a valid designator</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_12">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:178</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I parse the Designator "<span class='match'>department:ICT</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition30-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          its role on the Document "<span class='match'>ICT Status Report</span>" should be <span class='match'>reader</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition38-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          its role on the Documents "<span class='match'>Cafeteria Menu, ICT Budget Report, Tim&#39;s Web Project</span>" should be <span class='match'>nil</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition38-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I make a Designator with "<span class='match'>position</span>" and "<span class='match'>1</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition29-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          its role on the Documents "<span class='match'>ICT Status Report, ICT Budget Report</span>" should be <span class='match'>writer</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition38-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          its role on the Documents "<span class='match'>Cafeteria Menu, Tim&#39;s Web Project</span>" should be <span class='match'>nil</span>
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition38-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_13">
+  <a name="scenario_13" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Obtaining the role of an invalid object</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_13">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:186</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I have a plain object as a Designator
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition31-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          its role on the Document "<span class='match'>ICT Status Report</span>" should give an <span class='match'>Eaco::Error</span> error saying
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition39-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  <div class="text">
+  role_of&nbsp;expects&nbsp;.+Object.+&nbsp;to&nbsp;be&nbsp;a&nbsp;Designator&nbsp;or&nbsp;to&nbsp;.+respond_to.+:designators
+</div>
+
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_14">
+  <a name="scenario_14" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Obtaining labels for roles</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_14">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:193</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I ask the Document the list of roles and labels
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition40-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I should get the following roles and labels
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition41-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">writer</th>
+        
+          <th class="even">R/W</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>reader</td>
+        
+          <td>R/O</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_15">
+  <a name="scenario_15" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario:</span>
+      <span class="name">Authorizing a controller</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_15">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/enterprise_authorization.feature:199</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I have an authorized Controller defined as
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition21-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  <div class="text">
+  &nbsp;&nbsp;before_filter&nbsp;:find_document<br/><br/>&nbsp;&nbsp;authorize&nbsp;:show,&nbsp;[:document,&nbsp;:read&nbsp;]<br/>&nbsp;&nbsp;authorize&nbsp;:edit,&nbsp;[:document,&nbsp;:write]<br/><br/>&nbsp;&nbsp;def&nbsp;show<br/>&nbsp;&nbsp;&nbsp;&nbsp;head&nbsp;:ok<br/>&nbsp;&nbsp;end<br/><br/>&nbsp;&nbsp;def&nbsp;edit<br/>&nbsp;&nbsp;&nbsp;&nbsp;head&nbsp;:ok<br/>&nbsp;&nbsp;end<br/><br/>&nbsp;&nbsp;private<br/><br/>&nbsp;&nbsp;def&nbsp;find_document<br/>&nbsp;&nbsp;&nbsp;&nbsp;@document&nbsp;=&nbsp;Eaco::Cucumber::ActiveRecord::Document.where(name:&nbsp;params[:name]).first<br/>&nbsp;&nbsp;end
+</div>
+
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Dennis Ritchie</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I invoke the Controller "<span class='match'>show</span>" action with query string "<span class='match'>name=ICT Status Report</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition22-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          the Controller should not raise an error
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition23-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I invoke the Controller "<span class='match'>edit</span>" action with query string "<span class='match'>name=ICT Status Report</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition22-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          the Controller should not raise an error
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition23-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Rob Pike</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I invoke the Controller "<span class='match'>show</span>" action with query string "<span class='match'>name=ICT Status Report</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition22-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          the Controller should not raise an error
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition23-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I invoke the Controller "<span class='match'>edit</span>" action with query string "<span class='match'>name=ICT Status Report</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition22-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          the Controller should raise an <span class='match'>Eaco::Forbidden</span> error saying
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition24-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  <div class="text">
+  User.+not&nbsp;authorized&nbsp;to&nbsp;`edit&#39;&nbsp;on&nbsp;.+Document
+</div>
+
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>William Gates</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I invoke the Controller "<span class='match'>edit</span>" action with query string "<span class='match'>name=Cafeteria Menu</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition22-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          the Controller should not raise an error
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition23-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I invoke the Controller "<span class='match'>show</span>" action with query string "<span class='match'>name=ICT Status Report</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition22-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          the Controller should raise an <span class='match'>Eaco::Forbidden</span> error saying
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition24-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  <div class="text">
+  User.+not&nbsp;authorized&nbsp;to&nbsp;`show&#39;&nbsp;on&nbsp;.+Document
+</div>
+
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I am "<span class='match'>Steve Jobs</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition25-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I invoke the Controller "<span class='match'>show</span>" action with query string "<span class='match'>name=One More Thing</span>"
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition22-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          the Controller should raise an <span class='match'>Eaco::Error</span> error saying
+          <div class="definition developer">
+            <a href="../step_transformers.html#step_definition24-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  <div class="text">
+  @document&nbsp;is&nbsp;not&nbsp;set,&nbsp;can&#39;t&nbsp;authorize&nbsp;.+show
+</div>
+
+
+
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr  9 22:40:50 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.39 (ruby-3.3.10).
+</div>
+
+    </div>
+  </body>
+</html>
